@@ -1,0 +1,105 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.0.5",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "NextGen.Mantenimiento.Application": {
+      "path": "src/NextGen.Mantenimiento.Application/NextGen.Mantenimiento.Application.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.Application.Tests": {
+      "path": "test/NextGen.Mantenimiento.Application.Tests/NextGen.Mantenimiento.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.Domain.Shared": {
+      "path": "src/NextGen.Mantenimiento.Domain.Shared/NextGen.Mantenimiento.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.Application.Contracts": {
+      "path": "src/NextGen.Mantenimiento.Application.Contracts/NextGen.Mantenimiento.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.HttpApi": {
+      "path": "src/NextGen.Mantenimiento.HttpApi/NextGen.Mantenimiento.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.HttpApi.Client": {
+      "path": "src/NextGen.Mantenimiento.HttpApi.Client/NextGen.Mantenimiento.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.Web": {
+      "path": "src/NextGen.Mantenimiento.Web/NextGen.Mantenimiento.Web.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.Web.Tests": {
+      "path": "test/NextGen.Mantenimiento.Web.Tests/NextGen.Mantenimiento.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.EntityFrameworkCore.Tests": {
+      "path": "test/NextGen.Mantenimiento.EntityFrameworkCore.Tests/NextGen.Mantenimiento.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.EntityFrameworkCore": {
+      "path": "src/NextGen.Mantenimiento.EntityFrameworkCore/NextGen.Mantenimiento.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.TestBase": {
+      "path": "test/NextGen.Mantenimiento.TestBase/NextGen.Mantenimiento.TestBase.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.Domain.Tests": {
+      "path": "test/NextGen.Mantenimiento.Domain.Tests/NextGen.Mantenimiento.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/NextGen.Mantenimiento.HttpApi.Client.ConsoleTestApp/NextGen.Mantenimiento.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "NextGen.Mantenimiento.DbMigrator": {
+      "path": "src/NextGen.Mantenimiento.DbMigrator/NextGen.Mantenimiento.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "NextGen.Mantenimiento.Domain": {
+      "path": "src/NextGen.Mantenimiento.Domain/NextGen.Mantenimiento.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
