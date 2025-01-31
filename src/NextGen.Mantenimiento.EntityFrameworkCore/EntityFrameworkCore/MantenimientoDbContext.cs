@@ -14,6 +14,7 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
+using NextGen.Mantenimiento.Entities;
 
 namespace NextGen.Mantenimiento.EntityFrameworkCore;
 
@@ -26,6 +27,8 @@ public class MantenimientoDbContext :
     IIdentityDbContext
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
+
+    public DbSet<Personal> Personal { get; set; }
 
 
     #region Entities from the modules
@@ -78,14 +81,15 @@ public class MantenimientoDbContext :
         builder.ConfigureOpenIddict();
         builder.ConfigureTenantManagement();
         builder.ConfigureBlobStoring();
-        
+
         /* Configure your own tables/entities inside here */
 
-        //builder.Entity<YourEntity>(b =>
-        //{
-        //    b.ToTable(MantenimientoConsts.DbTablePrefix + "YourEntities", MantenimientoConsts.DbSchema);
-        //    b.ConfigureByConvention(); //auto configure for the base class props
-        //    //...
-        //});
+        builder.Entity<Personal>(b =>
+        {
+            b.ToTable(MantenimientoConsts.DbTablePrefix + "Personal", MantenimientoConsts.DbSchema);
+            b.ConfigureByConvention(); //auto configure for the base class props
+            b.Property(x => x.Nombre).IsRequired().HasMaxLength(128);
+
+        });
     }
 }
