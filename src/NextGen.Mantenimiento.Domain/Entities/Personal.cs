@@ -1,10 +1,13 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using Volo.Abp.Domain.Entities;
 
 namespace NextGen.Mantenimiento.Entities;
 
-public partial class Personal
+
+public class Personal : Entity<int>
 {
     public int Id { get; set; }
 
