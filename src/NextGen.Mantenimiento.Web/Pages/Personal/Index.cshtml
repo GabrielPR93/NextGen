@@ -1,6 +1,19 @@
 ﻿@page
 @model NextGen.Mantenimiento.Web.Pages.Personal.IndexModel
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@section scripts
+{
+    <abp-script src="/Pages/Personal/Index.js" />
+}
 @{
 
-    <h2>Empleados</h2>
+    <abp-card>
+        <abp-card-header>
+            <h2>@L["Menu:Personal"]</h2>
+        </abp-card-header>
+        <abp-card-body>
+            <abp-table striped-rows="true" id="Personal"></abp-table>
+        </abp-card-body>
+    </abp-card>
 }

@@ -47,7 +47,7 @@ public class MantenimientoMenuContributor : IMenuContributor
             new ApplicationMenuItem(
             "Personal.empleados",
             l["Menu:Empleados"],
-            icon:"fa-solid fa-user-tie",
+            icon: "fa-solid fa-user-tie",
             url: "/Personal"
         )
     )
