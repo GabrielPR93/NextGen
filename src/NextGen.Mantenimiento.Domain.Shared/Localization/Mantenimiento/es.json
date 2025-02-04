@@ -3,6 +3,8 @@
   "texts": {
     "AppName": "Mantenimiento",
     "Menu:Home": "Hogar",
+    "Menu:Personal": "Personal",
+    "Menu:Empleados": "Empleados",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",

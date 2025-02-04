@@ -36,6 +36,24 @@ public class MantenimientoMenuContributor : IMenuContributor
             )
         );
 
+        //Personal
+
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+            "Personal",
+            l["Menu:Personal"],
+            icon: "fa-solid fa-people-group"
+        ).AddItem(
+            new ApplicationMenuItem(
+            "Personal.empleados",
+            l["Menu:Empleados"],
+            icon:"fa-solid fa-user-tie",
+            url: "/Personal"
+        )
+    )
+);
+
+
 
         //Administration
         var administration = context.Menu.GetAdministration();
@@ -43,7 +61,7 @@ public class MantenimientoMenuContributor : IMenuContributor
 
         //Administration->Identity
         administration.SetSubItemOrder(IdentityMenuNames.GroupName, 1);
-    
+
         if (MultiTenancyConsts.IsEnabled)
         {
             administration.SetSubItemOrder(TenantManagementMenuNames.GroupName, 1);
@@ -52,12 +70,12 @@ public class MantenimientoMenuContributor : IMenuContributor
         {
             administration.TryRemoveMenuItem(TenantManagementMenuNames.GroupName);
         }
-        
+
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 3);
 
         //Administration->Settings
         administration.SetSubItemOrder(SettingManagementMenuNames.GroupName, 7);
-        
+
         return Task.CompletedTask;
     }
 }
