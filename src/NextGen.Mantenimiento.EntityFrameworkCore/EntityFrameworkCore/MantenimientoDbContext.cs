@@ -86,9 +86,13 @@ public class MantenimientoDbContext :
 
         builder.Entity<Personal>(b =>
         {
-            b.ToTable(MantenimientoConsts.DbTablePrefix + "Personal", MantenimientoConsts.DbSchema);
-            b.ConfigureByConvention(); //auto configure for the base class props
+            b.ToTable("Personal");
+            b.HasKey(x => x.Id); // Define la clave primaria
             b.Property(x => x.Nombre).IsRequired().HasMaxLength(128);
+            b.Property(x => x.Apellidos).IsRequired();
+            b.Property(x => x.Direccion).IsRequired();
+            b.Property(x => x.CorreoElectronico).IsRequired();
+            b.Property(x => x.FechaAlta).IsRequired();
 
         });
     }

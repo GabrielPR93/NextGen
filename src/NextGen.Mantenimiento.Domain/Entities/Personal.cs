@@ -6,7 +6,7 @@ using Volo.Abp.Domain.Entities;
 
 namespace NextGen.Mantenimiento.Entities;
 
-
+[Table("Personal")]
 public class Personal : Entity<int>
 {
     public int Id { get; set; }
