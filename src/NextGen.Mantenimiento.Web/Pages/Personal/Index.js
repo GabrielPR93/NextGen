@@ -14,6 +14,7 @@
                     type: 'GET'
                 }).done(function (result) {
                     console.log("Datos recibidos de la API:", result); // Verifica la estructura en la consola
+                    console.log("Datos enviados a DataTables:", result.items);
                     callback({ data: result.items }); // Extraer solo `items`
                 }).fail(function (xhr, status, error) {
                     console.error("Error en la petición AJAX:", error);
@@ -25,12 +26,28 @@
                     data: "id"
                 },
                 {
+                    title: l('Dep-Id'),
+                    data: "departamentoId"
+                },
+                {
+                    title: l('Cat-Id'),
+                    data: "categoriaId"
+                },
+                {
                     title: l('Nombre'),
                     data: "nombre"
                 },
                 {
                     title: l('Apellidos'),
                     data: "apellidos"
+                },
+                {
+                    title: l('DNI'),
+                    data: "dni"
+                },
+                {
+                    title: l('Teléfono'),
+                    data: "telefono"
                 },
                 {
                     title: l('Dirección'),
@@ -41,16 +58,36 @@
                     data: "correoElectronico"
                 },
                 {
+                    title: l('Fecha de Nacimiento'),
+                    data: "fechaNacimiento",
+                    render: function (data) {
+                        if (!data) return "-"; // Si la fecha es null, muestra "-"
+                        return luxon.DateTime
+                            .fromISO(data)
+                            .toLocaleString(luxon.DateTime.DATE_SHORT);
+                    }
+                },
+                {
                     title: l('Fecha Alta'),
                     data: "fechaAlta",
                     render: function (data) {
                         if (!data) return "-"; // Si la fecha es null, muestra "-"
                         return luxon.DateTime
-                            .fromISO(data, { locale: abp.localization.currentCulture.name })
-                            .toLocaleString(luxon.DateTime.DATETIME_SHORT);
+                            .fromISO(data)
+                            .toLocaleString(luxon.DateTime.DATE_SHORT);
                     }
                 },
                 {
+                    title: l('Fecha Baja'),
+                    data: "fechaBaja",
+                    render: function (data) {
+                        if (!data) return "-"; // Si la fecha es null, muestra "-"
+                        return luxon.DateTime
+                            .fromISO(data)
+                            .toLocaleString(luxon.DateTime.DATE_SHORT);
+                    }
+                },
+                {   // ✅ Mueve este bloque dentro del array `columnDefs`
                     title: l('Acciones'),
                     orderable: false,
                     render: function (data, type, row) {
@@ -95,3 +132,4 @@
         );
     });
 });
+

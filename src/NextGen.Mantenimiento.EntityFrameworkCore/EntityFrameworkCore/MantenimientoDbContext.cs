@@ -88,12 +88,48 @@ public class MantenimientoDbContext :
         {
             b.ToTable("Personal");
             b.HasKey(x => x.Id); // Define la clave primaria
-            b.Property(x => x.Nombre).IsRequired().HasMaxLength(128);
-            b.Property(x => x.Apellidos).IsRequired();
-            b.Property(x => x.Direccion).IsRequired();
-            b.Property(x => x.CorreoElectronico).IsRequired();
-            b.Property(x => x.FechaAlta).IsRequired();
 
+            b.Property(x => x.DepartamentoId)
+            .IsRequired();
+
+            b.Property(x => x.CategoriaId)
+           .IsRequired();
+
+            b.Property(x => x.Nombre)
+                .IsRequired()
+                .HasMaxLength(128);
+
+            b.Property(x => x.Apellidos)
+                .IsRequired()
+                .HasMaxLength(128);
+
+            b.Property(x => x.Dni)
+                .IsRequired()
+                .HasMaxLength(9); 
+
+            b.Property(x => x.Telefono)
+                .IsRequired()
+                .HasMaxLength(20);
+
+            b.Property(x => x.Direccion)
+                .IsRequired();
+
+            b.Property(x => x.CorreoElectronico)
+                .IsRequired()
+                .HasMaxLength(256); 
+
+            b.Property(x => x.FechaNacimiento)
+                .IsRequired()
+                .HasColumnType("date"); 
+
+            b.Property(x => x.FechaAlta)
+                .IsRequired()
+                .HasColumnType("date");
+
+            b.Property(x => x.FechaBaja)
+                .HasColumnType("date") 
+                .IsRequired(false);
         });
+
     }
 }
