@@ -9,11 +9,22 @@
 @{
 
     <abp-card>
-        <abp-card-header class="text-center">
-            <h2 class="mb-0">@L["Menu:Empleados"]</h2>
+        <abp-card-header>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-card-title>@L["Menu:Empleados"]</abp-card-title>
+                </abp-column>
+                <abp-column size-md="_6" class="text-end">
+                    <abp-button id="NewPersonalButton"
+                                text="@L["NewEmployee"].Value"
+                                icon="plus"
+                                button-type="Primary" />
+                </abp-column>
+            </abp-row>
         </abp-card-header>
         <abp-card-body>
             <abp-table striped-rows="true" id="Personal"></abp-table>
         </abp-card-body>
     </abp-card>
+
 }

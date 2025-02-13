@@ -105,31 +105,18 @@
         })
     );
 
-    // Evento para editar un registro
-    $(document).on('click', '.edit-personal', function () {
-        var id = $(this).data('id');
-        abp.modals.editPersonal.open({ id: id });
+    //Evento para Añadir Empleado
+    var createModal = new abp.ModalManager('/Personal/CreateModal');
+    console.log("-----------------------------> "+createModal)
+
+    createModal.onResult(function () {
+        dataTable.ajax.reload();
     });
 
-    // Evento para eliminar un registro
-    $(document).on('click', '.delete-personal', function () {
-        var id = $(this).data('id');
-        abp.message.confirm(
-            l('AreYouSureToDelete'),
-            function (confirmed) {
-                if (confirmed) {
-                    abp.ajax({
-                        url: `https://localhost:44343/api/app/personal/${id}`,
-                        type: 'DELETE'
-                    }).done(function () {
-                        abp.notify.info(l('SuccessfullyDeleted'));
-                        dataTable.ajax.reload(); // Recargar la tabla después de eliminar
-                    }).fail(function (xhr, status, error) {
-                        console.error("Error al eliminar:", error);
-                    });
-                }
-            }
-        );
+    $('#NewPersonalButton').click(function (e) {
+        e.preventDefault();
+        createModal.open();
     });
+
 });
 
