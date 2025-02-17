@@ -1,0 +1,20 @@
+﻿@page
+@using NextGen.Mantenimiento.PersonalDtos
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@model NextGen.Mantenimiento.Web.Pages.Personal.EditModalModel
+@{
+    Layout = null; //Layout null para no incluir todo el diseño de los modales cuando se cargan a través de AJAX.
+}
+
+<abp-dynamic-form abp-model="Personal" asp-page="/Personal/EditModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-input asp-for="Id" type="hidden"/>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

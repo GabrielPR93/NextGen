@@ -4,6 +4,13 @@
     "AppName": "Mantenimiento",
     "Menu:Home": "Home",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
-    "Welcome": "Welcome"
+    "Welcome": "Welcome",
+    "Nuevo Empleado": "New Employee",
+    "Nombre":"Name",
+    "Actions": "Actions",
+    "Edit": "Edit",
+    "Delete": "Delete",
+    "SuccessfullyDeleted": "Successfully deleted",
+    "PersonalDeletionConfirmationMessage": "Are you sure you want to delete {0}?"
   }
 }

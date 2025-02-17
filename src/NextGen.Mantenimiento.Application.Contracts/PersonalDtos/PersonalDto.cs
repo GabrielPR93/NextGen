@@ -9,8 +9,6 @@ namespace NextGen.Mantenimiento.Personal
 {
     public class PersonalDto : AuditedEntityDto<int>
     {
-        //public int Id { get; set; }
-
         public int DepartamentoId { get; set; }
         public int CategoriaId { get; set; }
 
