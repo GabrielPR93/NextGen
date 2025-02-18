@@ -8,6 +8,7 @@
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",
+    //Empleados
     "Nuevo Empleado": "Nuevo Empleado",
     "Actions": "Acciones",
     "Nombre": "Nombre",
@@ -25,6 +26,13 @@
     "SuccessfullyEdited": "Editado correctamente",
     "SuccessfullyAdded": "Agregado correctamente",
     "PersonalDeletionConfirmationMessage": "¿Estás seguro de que quieres eliminar a {0}?",
+    //Permisos
+    "Permission:Personal": "Personal",
+    "Permission:Employees": "Gestión de empleados",
+    "Permission:Employees.Create": "Crear nuevos empleados",
+    "Permission:Employees.Edit": "Editar empleados",
+    "Permission:Employees.Delete": "Eliminar empleados",
+
     "Welcome": "Bienvenido",
     "LongWelcomeMessage": "Bienvenido a la aplicacion. Este es un proyecto de inicio basado en el marco ABP. Para obtener mas informacion, visite",
     "Date": "Fecha",

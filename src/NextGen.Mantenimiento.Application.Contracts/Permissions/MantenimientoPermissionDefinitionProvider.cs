@@ -9,7 +9,12 @@ public class MantenimientoPermissionDefinitionProvider : PermissionDefinitionPro
 {
     public override void Define(IPermissionDefinitionContext context)
     {
-        var myGroup = context.AddGroup(MantenimientoPermissions.GroupName);
+        var personalGroup = context.AddGroup(MantenimientoPermissions.GroupName, L("Permission:Personal"));
+
+        var personalPermission = personalGroup.AddPermission(MantenimientoPermissions.Personal.Default, L("Permission:Personal"));
+        personalPermission.AddChild(MantenimientoPermissions.Personal.Create, L("Permission:Create"));
+        personalPermission.AddChild(MantenimientoPermissions.Personal.Edit, L("Permission:Edit"));
+        personalPermission.AddChild(MantenimientoPermissions.Personal.Delete, L("Permission:Delete"));
 
         //Define your own permissions here. Example:
         //myGroup.AddPermission(MantenimientoPermissions.MyPermission1, L("Permission:MyPermission1"));

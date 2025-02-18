@@ -8,6 +8,7 @@
     "Menu:ContactUs": "Contact Us",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
     "Welcome": "Welcome",
+    //Empleados
     "Nuevo Empleado": "New Employee",
     "Actions": "Actions",
     "Nombre": "Name",
@@ -24,6 +25,12 @@
     "SuccessfullyDeleted": "Successfully deleted",
     "SuccessfullyEdited": "Successfully edited",
     "SuccessfullyAdded": "Successfully added",
-    "PersonalDeletionConfirmationMessage": "Are you sure you want to delete {0}?"
+    "PersonalDeletionConfirmationMessage": "Are you sure you want to delete {0}?",
+    //Permisos
+    "Permission:Personal": "Staff",
+    "Permission:Employees": "Employee Management",
+    "Permission:Employees.Create": "Creating new employees",
+    "Permission:Employees.Edit": "Editing employees",
+    "Permission:Employees.Delete": "Deleting employees"
   }
 }

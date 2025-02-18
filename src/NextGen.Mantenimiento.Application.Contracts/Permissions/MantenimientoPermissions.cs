@@ -5,7 +5,12 @@ public static class MantenimientoPermissions
     public const string GroupName = "Mantenimiento";
 
 
-    
-    //Add your own permission names. Example:
-    //public const string MyPermission1 = GroupName + ".MyPermission1";
+    public static class Personal
+    {
+        public const string Default = GroupName + ".Personal";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
+
 }
