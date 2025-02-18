@@ -1,5 +1,5 @@
 ﻿$(function () {
-    var l = abp.localization.getResource('Personal');
+    var l = abp.localization.getResource('Mantenimiento');
 
     // Crear instancias de modales
     var createModal = new abp.ModalManager('/Personal/CreateModal');
@@ -68,11 +68,11 @@
                 { title: l('Nombre'), data: "nombre" },
                 { title: l('Apellidos'), data: "apellidos" },
                 { title: l('DNI'), data: "dni" },
-                { title: l('Teléfono'), data: "telefono" },
-                { title: l('Dirección'), data: "direccion" },
-                { title: l('Correo Electrónico'), data: "correoElectronico" },
+                { title: l('Telefono'), data: "telefono" },
+                { title: l('Direccion'), data: "direccion" },
+                { title: l('Email'), data: "correoElectronico" },
                 {
-                    title: l('Fecha de Nacimiento'),
+                    title: l('FechaNacimiento'),
                     data: "fechaNacimiento",
                     render: function (data) {
                         return data ? luxon.DateTime.fromISO(data).toLocaleString(luxon.DateTime.DATE_SHORT) : "-";
@@ -98,10 +98,12 @@
 
     // Recargar la tabla después de crear o editar
     createModal.onResult(function () {
+        abp.notify.info(l('SuccessfullyAdded'));
         dataTable.ajax.reload();
     });
 
     editModal.onResult(function () {
+        abp.notify.info(l('SuccessfullyEdited'));
         dataTable.ajax.reload();
     });
 
