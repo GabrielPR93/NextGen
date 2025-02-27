@@ -31,12 +31,14 @@
                         items: [
                             {
                                 text: l('Edit'),
+                                visible: abp.auth.isGranted('Mantenimiento.Personal.Edit'),
                                 action: function (data) {
                                     editModal.open({ id: data.record.id });
                                 }
                             },
                             {
                                 text: l('Delete'),
+                                visible: abp.auth.isGranted('Mantenimiento.Personal.Delete'),
                                 action: function (data) {
                                     abp.message.confirm(
                                         l('PersonalDeletionConfirmationMessage', data.record.nombre)
@@ -106,6 +108,10 @@
         abp.notify.info(l('SuccessfullyEdited'));
         dataTable.ajax.reload();
     });
+
+    if (!abp.auth.isGranted('Mantenimiento.Personal.Create')) {
+        $('#NewPersonalButton').hide();
+    }
 
     $('#NewPersonalButton').click(function (e) {
         e.preventDefault();

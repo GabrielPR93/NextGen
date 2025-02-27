@@ -136,7 +136,9 @@ public class MantenimientoWebModule : AbpModule
 
         context.Services.Configure<RazorPagesOptions>(options =>
         {
-            options.Conventions.AuthorizePage("/Personal/EditModal"); // Si necesita autenticación
+            options.Conventions.AuthorizePage("/Books/Index", MantenimientoPermissions.Personal.Default);
+            options.Conventions.AuthorizePage("/Books/CreateModal", MantenimientoPermissions.Personal.Create);
+            options.Conventions.AuthorizePage("/Personal/EditModal", MantenimientoPermissions.Personal.Edit);
            
         });
 

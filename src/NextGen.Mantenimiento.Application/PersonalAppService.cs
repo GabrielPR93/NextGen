@@ -1,4 +1,5 @@
-﻿using NextGen.Mantenimiento.Personal;
+﻿using NextGen.Mantenimiento.Permissions;
+using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.PersonalDtos;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,15 @@ using Volo.Abp.Domain.Repositories;
 
 namespace NextGen.Mantenimiento
 {
-    public class PersonalAppService : CrudAppService<NextGen.Mantenimiento.Entities.Personal, PersonalDto, int, PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>, IPersonalAppService
+    public class PersonalAppService : CrudAppService<Entities.Personal, PersonalDto, int, PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>, IPersonalAppService
     {
         public PersonalAppService(IRepository<Entities.Personal, int> repository) : base(repository)
         {
+            GetPolicyName = MantenimientoPermissions.Personal.Default;
+            GetListPolicyName = MantenimientoPermissions.Personal.Default;
+            CreatePolicyName = MantenimientoPermissions.Personal.Create;
+            UpdatePolicyName = MantenimientoPermissions.Personal.Edit;
+            DeletePolicyName = MantenimientoPermissions.Personal.Delete;
         }
     }
 }

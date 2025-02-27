@@ -49,7 +49,7 @@ public class MantenimientoMenuContributor : IMenuContributor
             l["Menu:Empleados"],
             icon: "fa-solid fa-user-tie",
             url: "/Personal"
-        )
+        ).RequirePermissions(MantenimientoPermissions.Personal.Default)
     )
 );
 

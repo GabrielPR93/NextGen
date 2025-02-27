@@ -1,7 +1,11 @@
 ﻿@page
 @model NextGen.Mantenimiento.Web.Pages.Personal.IndexModel
 @using Microsoft.Extensions.Localization
+@using NextGen.Mantenimiento.Localization
+@using NextGen.Mantenimiento.Permissions
+@using Microsoft.AspNetCore.Authorization
 @inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@inject IAuthorizationService AuthorizationService
 @section scripts
 {
     <abp-script src="/Pages/Personal/Index.js" />
@@ -15,10 +19,14 @@
                     <abp-card-title>@L["Menu:Empleados"]</abp-card-title>
                 </abp-column>
                 <abp-column size-md="_6" class="text-end">
-                    <abp-button id="NewPersonalButton"
+                    @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Personal.Create))
+                    {
+
+                        <abp-button id="NewPersonalButton"
                                 text="@L["Nuevo Empleado"].Value"
                                 icon="plus"
                                 button-type="Primary" />
+                    }
                 </abp-column>
             </abp-row>
         </abp-card-header>
