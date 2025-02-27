@@ -29,8 +29,8 @@
     //Permisos
     "Permission:Personal": "Staff",
     "Permission:Employees": "Employee Management",
-    "Permission:Employees.Create": "Creating new employees",
-    "Permission:Employees.Edit": "Editing employees",
-    "Permission:Employees.Delete": "Deleting employees"
+    "Permission:Create": "Creating new employees",
+    "Permission:Edit": "Editing employees",
+    "Permission:Delete": "Deleting employees"
   }
 }

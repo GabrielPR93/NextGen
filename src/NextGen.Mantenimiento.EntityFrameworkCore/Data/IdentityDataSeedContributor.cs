@@ -41,12 +41,12 @@ namespace NextGen.Mantenimiento.EntityFrameworkCore.Data
                 var existingUser = await userManager.FindByEmailAsync(adminEmail);
                 if (existingUser == null)
                 {
-                    // 🔹 Crear el usuario usando el constructor correcto
+                    // Crear el usuario usando el constructor correcto
                     var adminUser = new IdentityUser(
                         Guid.NewGuid(), // ID del usuario
                         adminEmail,     // Nombre de usuario
                         adminEmail,     // Correo electrónico
-                        null            // TenantId (null si no usas multitenancy)
+                        null            // TenantId (null si no se usa multitenancy)
                     );
 
                     adminUser.SetEmailConfirmed(true);

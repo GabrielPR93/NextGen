@@ -29,9 +29,9 @@
     //Permisos
     "Permission:Personal": "Personal",
     "Permission:Employees": "Gestión de empleados",
-    "Permission:Employees.Create": "Crear nuevos empleados",
-    "Permission:Employees.Edit": "Editar empleados",
-    "Permission:Employees.Delete": "Eliminar empleados",
+    "Permission:Create": "Crear nuevos empleados",
+    "Permission:Edit": "Editar empleados",
+    "Permission:Delete": "Eliminar empleados",
 
     "Welcome": "Bienvenido",
     "LongWelcomeMessage": "Bienvenido a la aplicacion. Este es un proyecto de inicio basado en el marco ABP. Para obtener mas informacion, visite",
