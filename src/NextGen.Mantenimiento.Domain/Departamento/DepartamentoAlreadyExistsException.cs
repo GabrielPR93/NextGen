@@ -10,7 +10,7 @@ namespace NextGen.Mantenimiento.Departamento
     public class DepartamentoAlreadyExistsException: BusinessException
     {
 
-        public DepartamentoAlreadyExistsException(string nombre): base(DepartamentoDomainErrorCodes.DepartamanetoAlreadyExists)
+        public DepartamentoAlreadyExistsException(string nombre): base(MantenimientoDomainErrorCodes.DepartamentoAlreadyExists)
         {
             WithData("nombre",nombre);
             

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NextGen.Mantenimiento.Departamento
+namespace NextGen.Mantenimiento.EntityFrameworkCore.Departamento
 {
-    public class DepartamentoConsts
+    internal class EfCoreDepartamentoRepository
     {
-        public const int MaxNameLength = 10;
     }
 }
