@@ -32,6 +32,13 @@
     "Permission:Create": "Crear nuevos empleados",
     "Permission:Edit": "Editar empleados",
     "Permission:Delete": "Eliminar empleados",
+
+    "Permission:Departamento": "Gestión de departamentos",
+    "Permission:Departamento.Create": "Crear nuevos departamentos",
+    "Permission:Departamento.Edit": "Editar departamentos",
+    "Permission:Departamento.Delete": "Eliminar departamentos",
+
+
     //Departamentos
     "Departamento: 00001": "Ya existe un departamento con el mismo nombre: {nombre}",
 

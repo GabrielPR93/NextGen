@@ -4,6 +4,7 @@ using NextGen.Mantenimiento.Entities;
 using Volo.Abp.AutoMapper;
 using NextGen.Mantenimiento.PersonalDtos;
 using NextGen.Mantenimiento.Personal;
+using NextGen.Mantenimiento.Departamento;
 
 namespace NextGen.Mantenimiento;
 
@@ -15,8 +16,10 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
          * Alternatively, you can split your mapping configurations
          * into multiple profile classes for a better organization. */
 
-        CreateMap<NextGen.Mantenimiento.Entities.Personal, PersonalDto>()
+        CreateMap<Entities.Personal, PersonalDto>()
             .IgnoreAuditedObjectProperties();
-        CreateMap<CreateUpdatePersonalDto, NextGen.Mantenimiento.Entities.Personal>();
+        CreateMap<CreateUpdatePersonalDto, Entities.Personal>();
+
+        CreateMap<Departamento.Departamento, DepartamentoDto>();
     }
 }

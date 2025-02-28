@@ -15,6 +15,8 @@ using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using NextGen.Mantenimiento.Entities;
+using NextGen.Mantenimiento.Departamento;
+
 
 namespace NextGen.Mantenimiento.EntityFrameworkCore;
 
@@ -29,6 +31,7 @@ public class MantenimientoDbContext :
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
     public DbSet<Personal> Personal { get; set; }
+    public DbSet<Departamento.Departamento> Departamentos { get; set; }
 
 
     #region Entities from the modules
@@ -129,6 +132,20 @@ public class MantenimientoDbContext :
             b.Property(x => x.FechaBaja)
                 .HasColumnType("date") 
                 .IsRequired(false);
+        });
+
+        builder.Entity<Departamento.Departamento>(b =>
+        {
+            b.ToTable("Departamentos");
+            // b.HasKey(x => x.Id); // Define la clave primaria
+            b.ConfigureByConvention();
+            //b.Property(x => x.Nombre)
+            //    .IsRequired()
+            //    .HasMaxLength(128);
+            b.Property(x => x.NombreAbreviado)
+                .IsRequired()
+                .HasMaxLength(DepartamentoConsts.MaxNameLength);
+            b.HasIndex(x => x.NombreAbreviado);
         });
 
     }
