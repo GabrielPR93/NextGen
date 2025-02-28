@@ -32,6 +32,8 @@
     "Permission:Create": "Crear nuevos empleados",
     "Permission:Edit": "Editar empleados",
     "Permission:Delete": "Eliminar empleados",
+    //Departamentos
+    "Departamento: 00001": "Ya existe un departamento con el mismo nombre: {nombre}",
 
     "Welcome": "Bienvenido",
     "LongWelcomeMessage": "Bienvenido a la aplicacion. Este es un proyecto de inicio basado en el marco ABP. Para obtener mas informacion, visite",
