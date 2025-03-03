@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using NextGen.Mantenimiento.Permissions;
 using NextGen.Mantenimiento.PersonalDtos;
 using NextGen.Mantenimiento.Web.Pages;
-using System;
 using System.Threading.Tasks;
 
 namespace NextGen.Mantenimiento.Web.Pages.Personal
@@ -21,11 +21,10 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
             _personalAppService = personalAppService;
         }
 
-        public IActionResult OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            // Si el usuario no tiene permisos, lo redirige a AccessDenied
-           
-            if (!User.IsInRole("Mantenimiento.Personal.Create"))
+            // Verifica si el usuario tiene el permiso correcto
+            if (!(await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Personal.Create)))
             {
                 return Redirect("/Account/AccessDenied?ReturnUrl=%2FPersonal%2FCreateModal");
             }
@@ -34,9 +33,10 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
             return Page();
         }
 
+
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!User.IsInRole("Mantenimiento.Personal.Create"))
+            if (!(await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Personal.Create)))
             {
                 return Redirect("/Account/AccessDenied?ReturnUrl=%2FPersonal%2FCreateModal");
             }
