@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NextGen.Mantenimiento.PersonalDtos;
 using NextGen.Mantenimiento.Web.Pages;
+using System;
 using System.Threading.Tasks;
 
 namespace NextGen.Mantenimiento.Web.Pages.Personal
@@ -23,6 +24,7 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
         public IActionResult OnGet()
         {
             // Si el usuario no tiene permisos, lo redirige a AccessDenied
+           
             if (!User.IsInRole("Mantenimiento.Personal.Create"))
             {
                 return Redirect("/Account/AccessDenied?ReturnUrl=%2FPersonal%2FCreateModal");

@@ -1,4 +1,5 @@
 using AutoMapper;
+using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.PersonalDtos;
 
@@ -10,5 +11,6 @@ public class MantenimientoWebAutoMapperProfile : Profile
     {
         //Define your object mappings here, for the Web project
         CreateMap<PersonalDto, CreateUpdatePersonalDto>();
+        CreateMap<Departamento.Departamento, DepartamentoDto>();
     }
 }

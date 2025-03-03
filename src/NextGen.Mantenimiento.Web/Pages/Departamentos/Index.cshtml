@@ -1,0 +1,36 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using NextGen.Mantenimiento.Localization
+@using NextGen.Mantenimiento.Permissions
+@using Microsoft.AspNetCore.Authorization
+@inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@inject IAuthorizationService AuthorizationService
+@model NextGen.Mantenimiento.Web.Pages.Departamentos.IndexModel
+@section scripts
+{
+    <abp-script src="/Pages/Departamentos/Index.js" />
+}
+
+@{
+    <abp-card>
+        <abp-card-header>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-card-title>@L["Menu:Departamentos"]</abp-card-title>
+                </abp-column>
+                <abp-column size-md="_6" class="text-end">
+                    @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Departamento.Create))
+                    {
+                        <abp-button id="NewDepartamentoButton"
+                                    text="@L["NuevoDepartamento"].Value"
+                                    icon="plus"
+                                    button-type="Primary" />
+                    }
+                </abp-column>
+            </abp-row>
+        </abp-card-header>
+        <abp-card-body>
+            <abp-table striped-rows="true" id="DepartamentosTable"></abp-table>
+        </abp-card-body>
+    </abp-card>
+}

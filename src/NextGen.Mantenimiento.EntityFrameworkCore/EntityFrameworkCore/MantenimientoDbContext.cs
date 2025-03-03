@@ -31,7 +31,7 @@ public class MantenimientoDbContext :
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
     public DbSet<Personal> Personal { get; set; }
-    public DbSet<Departamento.Departamento> Departamentos { get; set; }
+    public DbSet<Departamento.Departamento> Departamento { get; set; }
 
 
     #region Entities from the modules
@@ -136,16 +136,12 @@ public class MantenimientoDbContext :
 
         builder.Entity<Departamento.Departamento>(b =>
         {
-            b.ToTable("Departamentos");
-            // b.HasKey(x => x.Id); // Define la clave primaria
+            b.ToTable("Departamento");
             b.ConfigureByConvention();
-            //b.Property(x => x.Nombre)
-            //    .IsRequired()
-            //    .HasMaxLength(128);
-            b.Property(x => x.NombreAbreviado)
+            b.Property(x => x.Nombre)
                 .IsRequired()
                 .HasMaxLength(DepartamentoConsts.MaxNameLength);
-            b.HasIndex(x => x.NombreAbreviado);
+            b.HasIndex(x => x.Nombre);
         });
 
     }

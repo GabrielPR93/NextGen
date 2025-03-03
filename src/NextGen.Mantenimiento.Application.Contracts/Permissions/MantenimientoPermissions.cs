@@ -12,5 +12,12 @@ public static class MantenimientoPermissions
         public const string Edit = Default + ".Edit";
         public const string Delete = Default + ".Delete";
     }
+    public static class Departamento
+    {
+        public const string Default = GroupName + ".Departamento";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
 
 }

@@ -23,7 +23,7 @@ namespace NextGen.Mantenimiento.Departamento
         public async Task<Departamento> FindByNameAsync(string nombre)
         {
             var dbSet = await GetDbSetAsync();
-            return await dbSet.FirstOrDefaultAsync(depto => depto.NombreAbreviado == nombre);
+            return await dbSet.FirstOrDefaultAsync(depto => depto.Nombre == nombre);
         }
 
         public async Task<List<Departamento>> GetListAsync(

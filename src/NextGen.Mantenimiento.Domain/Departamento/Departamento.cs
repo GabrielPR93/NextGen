@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
+using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.Emailing;
 
 namespace NextGen.Mantenimiento.Departamento
 {
-    public class Departamento : FullAuditedAggregateRoot<int>
+    public class Departamento : Entity<int>
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

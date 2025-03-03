@@ -9,6 +9,7 @@ namespace NextGen.Mantenimiento.Departamento
 {
     public class CreateDepartamentoDto
     {
+        public int Id { get; set; }
         [Required]
         public string Nombre { get; set; }
 

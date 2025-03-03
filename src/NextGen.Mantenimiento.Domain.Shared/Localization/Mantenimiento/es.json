@@ -5,10 +5,13 @@
     "Menu:Home": "Hogar",
     "Menu:Personal": "Personal",
     "Menu:Empleados": "Empleados",
+    "Menu:GestionCorporativa": "Gestión Corporativa", 
+    "Menu:Departamentos": "Departamentos",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",
     //Empleados
+    "ID": "ID",
     "Nuevo Empleado": "Nuevo Empleado",
     "Actions": "Acciones",
     "Nombre": "Nombre",
@@ -40,7 +43,10 @@
 
 
     //Departamentos
+    "Nombre Abreviado": "Nombre Abreviado",
+    "NuevoDepartamento": "Nuevo Departamento",
     "Departamento: 00001": "Ya existe un departamento con el mismo nombre: {nombre}",
+    "DepartamentoDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté departamento '{0}'",
 
     "Welcome": "Bienvenido",
     "LongWelcomeMessage": "Bienvenido a la aplicacion. Este es un proyecto de inicio basado en el marco ABP. Para obtener mas informacion, visite",

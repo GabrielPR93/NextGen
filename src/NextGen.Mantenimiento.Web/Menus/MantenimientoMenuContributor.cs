@@ -53,6 +53,22 @@ public class MantenimientoMenuContributor : IMenuContributor
     )
 );
 
+        //Departamento
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+            "Departamento",
+            l["Menu:GestionCorporativa"],
+            icon: "fa-solid fa-building"
+        ).AddItem(
+            new ApplicationMenuItem(
+            "Departamento.departamentos",
+            l["Menu:Departamentos"],
+            icon: "fa-solid fa-building",
+            url: "/Departamentos"
+        ).RequirePermissions(MantenimientoPermissions.Departamento.Default)
+    )
+);
+
 
 
         //Administration

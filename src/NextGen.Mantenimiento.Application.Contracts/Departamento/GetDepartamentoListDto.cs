@@ -9,6 +9,6 @@ namespace NextGen.Mantenimiento.Departamento
 {
     public class GetDepartamentoListDto : PagedAndSortedResultRequestDto
     {
-        public string Filter { get; set; }
+        public string? Filter { get; set; } = "";
     }
 }

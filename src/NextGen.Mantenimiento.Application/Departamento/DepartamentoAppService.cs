@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
 namespace NextGen.Mantenimiento.Departamento
+
 {
+    [RemoteService]
     [Authorize(MantenimientoPermissions.Departamento.Default)]
     public class DepartamentoAppService :MantenimientoAppService ,IDepartamentoAppService
     {
@@ -34,7 +37,7 @@ namespace NextGen.Mantenimiento.Departamento
         {
             if (input.Sorting.IsNullOrWhiteSpace())
             {
-                input.Sorting = nameof(Departamento.NombreAbreviado);
+                input.Sorting = nameof(Departamento.Nombre);
             }
 
             var departamentos = await _departamentoRepository.GetListAsync(
@@ -47,7 +50,7 @@ namespace NextGen.Mantenimiento.Departamento
             var totalCount = input.Filter == null
                 ? await _departamentoRepository.CountAsync()
                 : await _departamentoRepository.CountAsync(
-                    departamento => departamento.NombreAbreviado.Contains(input.Filter));
+                    departamento => departamento.Nombre.Contains(input.Filter));
 
             return new PagedResultDto<DepartamentoDto>(
                 totalCount,
@@ -74,15 +77,21 @@ namespace NextGen.Mantenimiento.Departamento
         {
             var departamento = await _departamentoRepository.GetAsync(id);
 
-            if (departamento.NombreAbreviado != input.NombreAbreviado)
+            if (departamento.Nombre != input.Nombre)
             {
-                await _departamentoManager.ChangeNameAsync(departamento, input.NombreAbreviado);
+                await _departamentoManager.ChangeNameAsync(departamento, input.Nombre);
             }
 
-            departamento.NombreAbreviado = input.BirthDate;
-            author.ShortBio = input.ShortBio;
+            departamento.Nombre = input.Nombre;
+            departamento.NombreAbreviado = input.NombreAbreviado;
 
-            await _authorRepository.UpdateAsync(author);
+            await _departamentoRepository.UpdateAsync(departamento);
+        }
+
+        [Authorize(MantenimientoPermissions.Departamento.Delete)]
+        public async Task DeleteAsync(int id)
+        {
+            await _departamentoRepository.DeleteAsync(id);
         }
 
 
