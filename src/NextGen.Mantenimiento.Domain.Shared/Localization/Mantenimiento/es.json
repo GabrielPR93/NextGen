@@ -5,7 +5,7 @@
     "Menu:Home": "Hogar",
     "Menu:Personal": "Personal",
     "Menu:Empleados": "Empleados",
-    "Menu:GestionCorporativa": "Gestión Corporativa", 
+    "Menu:GestionCorporativa": "Gestión Corporativa",
     "Menu:Departamentos": "Departamentos",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
@@ -43,6 +43,8 @@
 
 
     //Departamentos
+
+    "NewDepartamento": "Nuevo Departamento",
     "Nombre Abreviado": "Nombre Abreviado",
     "NuevoDepartamento": "Nuevo Departamento",
     "Departamento: 00001": "Ya existe un departamento con el mismo nombre: {nombre}",

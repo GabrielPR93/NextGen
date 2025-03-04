@@ -141,6 +141,9 @@ public class MantenimientoDbContext :
             b.Property(x => x.Nombre)
                 .IsRequired()
                 .HasMaxLength(DepartamentoConsts.MaxNameLength);
+            b.Property(x => x.NombreAbreviado)
+                .IsRequired()
+                .HasMaxLength(DepartamentoConsts.MaxabreviateNameLength);
             b.HasIndex(x => x.Nombre);
         });
 

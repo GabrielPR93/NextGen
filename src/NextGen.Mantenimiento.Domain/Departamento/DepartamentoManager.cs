@@ -22,6 +22,8 @@ namespace NextGen.Mantenimiento.Departamento
             Check.NotNullOrWhiteSpace(nombre, nameof(nombre));
             Check.NotNullOrWhiteSpace(nombreAbreviado, nameof(nombreAbreviado));
 
+            nombreAbreviado = nombreAbreviado.ToUpperInvariant();
+
             var existingDepartamento = await _departamentoRepository.FindByNameAsync(nombre);
             if (existingDepartamento != null)
             {

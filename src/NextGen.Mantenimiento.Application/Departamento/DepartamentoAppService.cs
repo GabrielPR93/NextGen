@@ -75,6 +75,7 @@ namespace NextGen.Mantenimiento.Departamento
         [Authorize(MantenimientoPermissions.Departamento.Edit)]
         public async Task UpdateAsync(int id, UpdateDepartamentoDto input)
         {
+            //TODO: Revisar
             var departamento = await _departamentoRepository.GetAsync(id);
 
             if (departamento.Nombre != input.Nombre)

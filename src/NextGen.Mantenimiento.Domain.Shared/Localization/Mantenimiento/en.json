@@ -41,6 +41,8 @@
     "Permission:Departamento.Edit": "Edit departments",
     "Permission:Departamento.Delete": "Delete departments",
     //Departamentos
+
+    "NewDepartamento": "New Department",
     "Nombre Abreviado": "Abbreviated Name",
     "NuevoDepartamento": "New Department",
     "Departamento: 00001": "There is already an department with the same name: {nombre}",

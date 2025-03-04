@@ -12,5 +12,8 @@ public class MantenimientoWebAutoMapperProfile : Profile
         //Define your object mappings here, for the Web project
         CreateMap<PersonalDto, CreateUpdatePersonalDto>();
         CreateMap<Departamento.Departamento, DepartamentoDto>();
+        CreateMap<Pages.Departamentos.CreateModalModel.CreateDepartamentoViewModel, CreateDepartamentoDto>();
+        CreateMap<DepartamentoDto, Pages.Departamentos.EditModalModel.EditDepartamentoViewModel>();
+        CreateMap<Pages.Departamentos.EditModalModel.EditDepartamentoViewModel, UpdateDepartamentoDto>();
     }
 }

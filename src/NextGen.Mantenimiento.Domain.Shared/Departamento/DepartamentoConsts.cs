@@ -8,6 +8,7 @@ namespace NextGen.Mantenimiento.Departamento
 {
     public class DepartamentoConsts
     {
-        public const int MaxNameLength = 10;
+        public const int MaxNameLength = 45;
+        public const int MaxabreviateNameLength = 4;
     }
 }

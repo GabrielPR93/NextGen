@@ -1,7 +1,7 @@
 ﻿$(function () {
     var l = abp.localization.getResource('Mantenimiento');
-    var createModal = new abp.ModalManager(abp.appPath + 'Departamento/CreateModal');
-    var editModal = new abp.ModalManager(abp.appPath + 'Departamento/EditModal');
+    var createModal = new abp.ModalManager(abp.appPath + 'Departamentos/CreateModal');
+    var editModal = new abp.ModalManager(abp.appPath + 'Departamentos/EditModal');
 
     var dataTable = $('#DepartamentosTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
