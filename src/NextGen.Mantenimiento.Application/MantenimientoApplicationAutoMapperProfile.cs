@@ -21,5 +21,6 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
         CreateMap<CreateUpdatePersonalDto, Entities.Personal>();
 
         CreateMap<Departamento.Departamento, DepartamentoDto>();
+        CreateMap<Departamento.Departamento, DepartamentoLookupDto>();
     }
 }

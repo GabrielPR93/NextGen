@@ -1,4 +1,5 @@
-﻿using NextGen.Mantenimiento.Personal;
+﻿using NextGen.Mantenimiento.Departamento;
+using NextGen.Mantenimiento.Personal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace NextGen.Mantenimiento.PersonalDtos
 {
     public interface IPersonalAppService : ICrudAppService<PersonalDto,int,PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>
     {
+
+        Task<ListResultDto<DepartamentoLookupDto>> GetDepartamentoLookupAsync();    
 
     }
 }

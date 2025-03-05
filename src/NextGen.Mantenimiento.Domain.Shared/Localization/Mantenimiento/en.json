@@ -20,6 +20,7 @@
     "Email": "Email",
     "Telefono": "Phone",
     "Direccion": "Address",
+    "Departamento": "Department",
     "FechaNacimiento": "Date of Birth",
     "Fecha Alta": "Start Date",
     "Fecha Baja": "End Date",

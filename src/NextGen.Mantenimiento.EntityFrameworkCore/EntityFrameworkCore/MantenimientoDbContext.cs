@@ -89,8 +89,11 @@ public class MantenimientoDbContext :
 
         builder.Entity<Personal>(b =>
         {
+            //b.ToTable("Personal");
+            //b.HasKey(x => x.Id); // Define la clave primaria
+
             b.ToTable("Personal");
-            b.HasKey(x => x.Id); // Define la clave primaria
+            b.ConfigureByConvention(); // Configura las convenciones para las propiedades de la entidad
 
             b.Property(x => x.DepartamentoId)
             .IsRequired();
@@ -132,6 +135,11 @@ public class MantenimientoDbContext :
             b.Property(x => x.FechaBaja)
                 .HasColumnType("date") 
                 .IsRequired(false);
+
+            b.HasOne<Departamento.Departamento>()
+                .WithMany()
+                .HasForeignKey(x => x.DepartamentoId)
+                .IsRequired();
         });
 
         builder.Entity<Departamento.Departamento>(b =>

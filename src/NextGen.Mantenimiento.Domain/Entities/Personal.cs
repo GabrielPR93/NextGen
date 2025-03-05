@@ -34,4 +34,8 @@ public class Personal: Entity<int>
     public DateTime FechaAlta { get; set; }
 
     public DateTime? FechaBaja { get; set; }
+
+    public string NombreCategoria { get; set; }
+
+    public string NombreDepartamento { get; set; }
 }

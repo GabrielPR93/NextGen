@@ -65,12 +65,12 @@
                     }
                 },
                 { title: l('Id'), data: "id" },
-                { title: l('Dep-Id'), data: "departamentoId" },
                 { title: l('Cat-Id'), data: "categoriaId" },
                 { title: l('Nombre'), data: "nombre" },
                 { title: l('Apellidos'), data: "apellidos" },
                 { title: l('DNI'), data: "dni" },
                 { title: l('Telefono'), data: "telefono" },
+                { title: l('Departamento'), data: "nombreDepartamento" },
                 { title: l('Direccion'), data: "direccion" },
                 { title: l('Email'), data: "correoElectronico" },
                 {

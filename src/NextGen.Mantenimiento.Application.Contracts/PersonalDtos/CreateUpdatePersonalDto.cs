@@ -14,7 +14,13 @@ namespace NextGen.Mantenimiento.PersonalDtos
         public int DepartamentoId { get; set; }
 
         [Required]
+        public string NombreDepartamento { get; set; }
+
+        [Required]
         public int CategoriaId { get; set; }
+
+        [Required]
+        public string NombreCategoria { get; set; }
 
         [Required]
         [StringLength(128)]

@@ -35,27 +35,7 @@
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
-                                //{
-                                //    text: l('Delete'),
-                                //    visible:
-                                //        abp.auth.isGranted('Mantenimiento.Departamento.Delete'),
-                                //    confirmMessage: function (data) {
-                                //        return l(
-                                //            'DepartamentoDeletionConfirmationMessage',
-                                //            data.record.name
-                                //        );
-                                //    },
-                                //    action: function (data) {
-                                //        NextGen.Mantenimiento.Departamento.Departamento
-                                //            .delete(data.record.id)
-                                //            .then(function () {
-                                //                abp.notify.info(
-                                //                    l('SuccessfullyDeleted')
-                                //                );
-                                //                dataTable.ajax.reload();
-                                //            });
-                                //    }
-                                //}
+          
                                 {
                                     text: l('Delete'),
                                     visible: abp.auth.isGranted('Mantenimiento.Departamento.Delete'),
