@@ -12,6 +12,7 @@
     <abp-modal>
         <abp-modal-header title="@L["Update"].Value"></abp-modal-header>
         <abp-modal-body>
+            <abp-input asp-for="Departamento.Id" type="hidden" />
             <abp-input asp-for="Departamento.Nombre" />
             <abp-input asp-for="Departamento.NombreAbreviado" />
         </abp-modal-body>

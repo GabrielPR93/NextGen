@@ -35,27 +35,53 @@
                                         editModal.open({ id: data.record.id });
                                     }
                                 },
+                                //{
+                                //    text: l('Delete'),
+                                //    visible:
+                                //        abp.auth.isGranted('Mantenimiento.Departamento.Delete'),
+                                //    confirmMessage: function (data) {
+                                //        return l(
+                                //            'DepartamentoDeletionConfirmationMessage',
+                                //            data.record.name
+                                //        );
+                                //    },
+                                //    action: function (data) {
+                                //        NextGen.Mantenimiento.Departamento.Departamento
+                                //            .delete(data.record.id)
+                                //            .then(function () {
+                                //                abp.notify.info(
+                                //                    l('SuccessfullyDeleted')
+                                //                );
+                                //                dataTable.ajax.reload();
+                                //            });
+                                //    }
+                                //}
                                 {
                                     text: l('Delete'),
-                                    visible:
-                                        abp.auth.isGranted('Mantenimiento.Departamento.Delete'),
-                                    confirmMessage: function (data) {
-                                        return l(
-                                            'DepartamentoDeletionConfirmationMessage',
-                                            data.record.name
-                                        );
-                                    },
+                                    visible: abp.auth.isGranted('Mantenimiento.Departamento.Delete'),
+           
                                     action: function (data) {
-                                        NextGen.Mantenimiento.Departamento.Departamento
-                                            .delete(data.record.id)
-                                            .then(function () {
-                                                abp.notify.info(
-                                                    l('SuccessfullyDeleted')
-                                                );
-                                                dataTable.ajax.reload();
-                                            });
+                                        abp.message.confirm(
+                                            l('DepartamentoDeletionConfirmationMessage', data.record.nombre),
+                                            l('AreYouSure'),
+                                            function (confirmed) {
+                                                if (confirmed) {
+                                                    abp.ajax({
+                                                        url: '/api/app/departamento/' + data.record.id,
+                                                        type: 'DELETE'
+                                                    }).done(function () {
+                                                        abp.notify.info(l('SuccessfullyDeleted'));
+                                                        dataTable.ajax.reload();
+                                                    }).fail(function (xhr, status, error) {
+                                                        console.error("Error al eliminar:", error);
+                                                        abp.notify.error(l('DeletionFailed'));
+                                                    });
+                                                }
+                                            }
+                                        );
                                     }
                                 }
+
                             ]
                     }
                 },
