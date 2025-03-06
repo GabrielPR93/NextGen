@@ -15,5 +15,9 @@ public class MantenimientoWebAutoMapperProfile : Profile
         CreateMap<Pages.Departamentos.CreateModalModel.CreateDepartamentoViewModel, CreateDepartamentoDto>();
         CreateMap<DepartamentoDto, Pages.Departamentos.EditModalModel.EditDepartamentoViewModel>();
         CreateMap<Pages.Departamentos.EditModalModel.EditDepartamentoViewModel, UpdateDepartamentoDto>();
+        CreateMap<Pages.Personal.CreateModalModel.CreatePersonalViewModel, CreateUpdatePersonalDto>();
+        CreateMap<PersonalDto, Pages.Personal.EditModalModel.EditPersonalViewModel>();
+        CreateMap<Pages.Personal.EditModalModel.EditPersonalViewModel, CreateUpdatePersonalDto>();
+
     }
 }

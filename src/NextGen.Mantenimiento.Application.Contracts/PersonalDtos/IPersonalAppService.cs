@@ -13,7 +13,8 @@ namespace NextGen.Mantenimiento.PersonalDtos
     public interface IPersonalAppService : ICrudAppService<PersonalDto,int,PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>
     {
 
-        Task<ListResultDto<DepartamentoLookupDto>> GetDepartamentoLookupAsync();    
+        Task<ListResultDto<DepartamentoLookupDto>> GetDepartamentoLookupAsync();
+
 
     }
 }

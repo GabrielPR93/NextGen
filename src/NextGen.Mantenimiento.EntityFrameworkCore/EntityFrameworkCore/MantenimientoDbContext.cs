@@ -89,11 +89,9 @@ public class MantenimientoDbContext :
 
         builder.Entity<Personal>(b =>
         {
-            //b.ToTable("Personal");
-            //b.HasKey(x => x.Id); // Define la clave primaria
-
+        
             b.ToTable("Personal");
-            b.ConfigureByConvention(); // Configura las convenciones para las propiedades de la entidad
+            b.ConfigureByConvention();
 
             b.Property(x => x.DepartamentoId)
             .IsRequired();

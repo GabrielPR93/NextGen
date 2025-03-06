@@ -13,13 +13,11 @@ namespace NextGen.Mantenimiento.PersonalDtos
         [Required]
         public int DepartamentoId { get; set; }
 
-        [Required]
         public string NombreDepartamento { get; set; }
 
         [Required]
         public int CategoriaId { get; set; }
 
-        [Required]
         public string NombreCategoria { get; set; }
 
         [Required]
@@ -35,7 +33,8 @@ namespace NextGen.Mantenimiento.PersonalDtos
         public string Dni { get; set; }
 
         [Required]
-        [Phone]
+        [RegularExpression(@"^\d+$")]
+        [StringLength(15, MinimumLength = 9)]
         public string Telefono { get; set; }
 
         [Required]

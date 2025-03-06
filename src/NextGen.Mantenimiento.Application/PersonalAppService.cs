@@ -30,19 +30,17 @@ namespace NextGen.Mantenimiento
             DeletePolicyName = MantenimientoPermissions.Personal.Delete;
         }
 
-
         public override async Task<PersonalDto> GetAsync(int id)
         {
-            //Get the IQueryable<Book> from the repository
+            
             var queryable = await Repository.GetQueryableAsync();
 
-            //Prepare a query to join books and authors
             var query = from personal in queryable
                         join departamento in await _departamentoRepository.GetQueryableAsync() on personal.DepartamentoId equals departamento.Id
                         where personal.Id == id
                         select new { personal, departamento };
 
-            //Execute the query and get the book with author
+           
             var queryResult = await AsyncExecuter.FirstOrDefaultAsync(query);
             if (queryResult == null)
             {
@@ -53,41 +51,6 @@ namespace NextGen.Mantenimiento
             personalDto.NombreDepartamento = queryResult.departamento.Nombre;
             return personalDto;
         }
-        //public override async Task<PagedResultDto<PersonalDto>> GetListAsync(PagedAndSortedResultRequestDto input)
-        //{
-        //    //Get the IQueryable<Personal> from the repository
-        //    var queryable = await Repository.GetQueryableAsync();
-
-        //    //Prepare a query to join books and authors
-        //    var query = from personal in queryable
-        //                join departamento in await _departamentoRepository.GetQueryableAsync() on personal.DepartamentoId equals departamento.Id
-        //                select new { personal, departamento };
-
-        //    //Paging
-        //    query = query
-        //        .OrderBy(NormalizeSorting(input.Sorting))
-        //        .Skip(input.SkipCount)
-        //        .Take(input.MaxResultCount);
-
-        //    //Execute the query and get a list
-        //    var queryResult = await AsyncExecuter.ToListAsync(query);
-
-        //    //Convert the query result to a list of PersonalDto objects
-        //    var personalDtos = queryResult.Select(x =>
-        //    {
-        //        var personalDto = ObjectMapper.Map<Entities.Personal, PersonalDto>(x.personal);
-        //        personalDto.NombreDepartamento = x.departamento.Nombre;
-        //        return personalDto;
-        //    }).ToList();
-
-        //    //Get the total count with another query
-        //    var totalCount = await Repository.GetCountAsync();
-
-        //    return new PagedResultDto<PersonalDto>(
-        //        totalCount,
-        //        personalDtos
-        //    );
-        //}
 
         public override async Task<PagedResultDto<PersonalDto>> GetListAsync(PagedAndSortedResultRequestDto input)
         {

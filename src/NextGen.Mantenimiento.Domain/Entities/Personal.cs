@@ -11,8 +11,6 @@ namespace NextGen.Mantenimiento.Entities;
 [Table("Personal")]
 public class Personal: Entity<int>
 {
-    //public int Id { get; set; }
-
     public int DepartamentoId { get; set; }
 
     public int CategoriaId { get; set; }
