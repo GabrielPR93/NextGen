@@ -10,10 +10,11 @@ using Volo.Abp.Application.Services;
 
 namespace NextGen.Mantenimiento.PersonalDtos
 {
-    public interface IPersonalAppService : ICrudAppService<PersonalDto,int,PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>
+    public interface IPersonalAppService : ICrudAppService<PersonalDto,int, FilteredPagedAndSortedResultRequestDto, CreateUpdatePersonalDto>
     {
 
         Task<ListResultDto<DepartamentoLookupDto>> GetDepartamentoLookupAsync();
+
 
 
     }

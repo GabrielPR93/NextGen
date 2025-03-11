@@ -7,17 +7,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
-using Volo.Abp.ObjectMapping;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace NextGen.Mantenimiento
 {
-    public class PersonalAppService : CrudAppService<Entities.Personal, PersonalDto, int, PagedAndSortedResultRequestDto, CreateUpdatePersonalDto>, IPersonalAppService
+    public class PersonalAppService : CrudAppService<Entities.Personal, PersonalDto, int, FilteredPagedAndSortedResultRequestDto, CreateUpdatePersonalDto>, IPersonalAppService
     {
         private readonly IDepartamentoRepository _departamentoRepository;
         public PersonalAppService(IRepository<Entities.Personal, int> repository, IDepartamentoRepository departamentoRepository) : base(repository)
@@ -52,7 +51,7 @@ namespace NextGen.Mantenimiento
             return personalDto;
         }
 
-        public override async Task<PagedResultDto<PersonalDto>> GetListAsync(PagedAndSortedResultRequestDto input)
+        public override async Task<PagedResultDto<PersonalDto>> GetListAsync(FilteredPagedAndSortedResultRequestDto input)
         {
             var departamentoQueryable = await _departamentoRepository.GetQueryableAsync();
             var queryable = await Repository.GetQueryableAsync();
@@ -62,6 +61,18 @@ namespace NextGen.Mantenimiento
                         on personal.DepartamentoId equals departamento.Id into dep
                         from departamento in dep.DefaultIfEmpty() // Evita errores si no hay departamento
                         select new { personal, departamento };
+
+            if (!string.IsNullOrWhiteSpace(input.Filter))
+            {
+                var filter = input.Filter.ToLower();
+                query = query.Where(x =>
+                    x.personal.Nombre.ToLower().Contains(filter) ||
+                    x.personal.Apellidos.ToLower().Contains(filter) ||
+                    x.personal.Dni.ToLower().Contains(filter) ||
+                    x.departamento.Nombre.ToLower().Contains(filter)
+                );
+            }
+            var totalCount = await AsyncExecuter.CountAsync(query);
 
             // Aplicar paginación y ordenamiento
             query = query
@@ -79,7 +90,7 @@ namespace NextGen.Mantenimiento
                 return personalDto;
             }).ToList();
 
-            var totalCount = await Repository.GetCountAsync();
+            
             return new PagedResultDto<PersonalDto>(totalCount, personalDtos);
         }
 
@@ -104,7 +115,7 @@ namespace NextGen.Mantenimiento
             {
                 return sorting.Replace(
                     "NombreDepartamento",
-                    "Departamento.Nombre",
+                    "departamento.Nombre",
                     StringComparison.OrdinalIgnoreCase
                 );
             }

@@ -15,10 +15,16 @@
             ajax: function (data, callback, settings) {
                 abp.ajax({
                     url: '/api/app/personal', // Ruta corregida
-                    type: 'GET'
+                    type: 'GET',
+                    data: {
+                        maxResultCount: data.length,
+                        skipCount: data.start,
+                        sorting: data.order.length > 0 ? data.columns[data.order[0].column].data + " " + data.order[0].dir : null,
+                        filter: data.search.value !== undefined && data.search.value !== null ? data.search.value : " "
+                    }
                 }).done(function (result) {
                     console.log("Datos recibidos de la API:", result);
-                    callback({ data: result.items }); // Extraer solo `items`
+                    callback({ recordsTotal: result.totalCount, recordsFiltered: result.totalCount, data: result.items }); // Extraer solo `items`
                 }).fail(function (xhr, status, error) {
                     console.error("Error en la petición AJAX:", error);
                 });
