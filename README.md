@@ -1,6 +1,6 @@
 ﻿# NextGen Mantenimiento
 
-> .Net con framework abp
+> ASP.NET Core MVC con framework abp
 
 Página Web de gestión de una empresa ficticia (NextGen) con acceso de varios usuarios
 
