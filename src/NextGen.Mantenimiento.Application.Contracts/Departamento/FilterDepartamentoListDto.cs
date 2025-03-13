@@ -7,8 +7,8 @@ using Volo.Abp.Application.Dtos;
 
 namespace NextGen.Mantenimiento.Departamento
 {
-    public class GetDepartamentoListDto : PagedAndSortedResultRequestDto
+    public class FilterDepartamentoListDto : PagedAndSortedResultRequestDto
     {
-        public string? Filter { get; set; } = "";
+        public string? Filter { get; set; }
     }
 }

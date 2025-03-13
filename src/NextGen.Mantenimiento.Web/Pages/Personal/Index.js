@@ -24,7 +24,7 @@
                     }
                 }).done(function (result) {
                     console.log("Datos recibidos de la API:", result);
-                    callback({ recordsTotal: result.totalCount, recordsFiltered: result.totalCount, data: result.items }); // Extraer solo `items`
+                    callback({ recordsTotal: result.totalCount, recordsFiltered: result.totalCount, data: result.items });
                 }).fail(function (xhr, status, error) {
                     console.error("Error en la petición AJAX:", error);
                 });

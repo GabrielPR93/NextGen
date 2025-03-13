@@ -33,7 +33,7 @@ namespace NextGen.Mantenimiento.Departamento
             return ObjectMapper.Map<Departamento, DepartamentoDto>(departamento);
         }
 
-        public async Task<PagedResultDto<DepartamentoDto>> GetListAsync(GetDepartamentoListDto input)
+        public async Task<PagedResultDto<DepartamentoDto>> GetListAsync(FilterDepartamentoListDto input)
         {
             if (input.Sorting.IsNullOrWhiteSpace())
             {
