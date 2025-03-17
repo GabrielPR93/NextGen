@@ -12,10 +12,10 @@ namespace NextGen.Mantenimiento.Categoria
         Task<Categoria> FindByNameAsync(string nombre);
 
         Task<List<Categoria>> GetListAsync(
-            string filter = null,
-            string sorting = null ,
+            string sorting,
             int maxResultCount = int.MaxValue,
-            int skipCount = 0
+            int skipCount = 0,
+             string filter = null
         );
     }
 }

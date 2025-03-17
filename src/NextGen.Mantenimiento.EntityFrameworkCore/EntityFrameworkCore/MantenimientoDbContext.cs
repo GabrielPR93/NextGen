@@ -18,6 +18,7 @@ using NextGen.Mantenimiento.Entities;
 using NextGen.Mantenimiento.Departamento;
 
 
+
 namespace NextGen.Mantenimiento.EntityFrameworkCore;
 
 [ReplaceDbContext(typeof(IIdentityDbContext))]
@@ -32,6 +33,8 @@ public class MantenimientoDbContext :
 
     public DbSet<Personal> Personal { get; set; }
     public DbSet<Departamento.Departamento> Departamento { get; set; }
+
+    public DbSet<Categoria.Categoria> Categorias { get; set; }
 
 
     #region Entities from the modules
@@ -138,6 +141,11 @@ public class MantenimientoDbContext :
                 .WithMany()
                 .HasForeignKey(x => x.DepartamentoId)
                 .IsRequired();
+
+            b.HasOne<Categoria.Categoria>()
+                .WithMany()
+                .HasForeignKey(x => x.CategoriaId)
+                .IsRequired();
         });
 
         builder.Entity<Departamento.Departamento>(b =>
@@ -150,6 +158,19 @@ public class MantenimientoDbContext :
             b.Property(x => x.NombreAbreviado)
                 .IsRequired()
                 .HasMaxLength(DepartamentoConsts.MaxabreviateNameLength);
+            b.HasIndex(x => x.Nombre);
+        });
+
+        builder.Entity<Categoria.Categoria>(b =>
+        {
+            b.ToTable("Categoria");
+            b.ConfigureByConvention();
+            b.Property(x => x.Nombre)
+                .IsRequired()
+                .HasMaxLength(128);
+            b.Property(x => x.Descripcion)
+                .IsRequired()
+                .HasMaxLength(256);
             b.HasIndex(x => x.Nombre);
         });
 

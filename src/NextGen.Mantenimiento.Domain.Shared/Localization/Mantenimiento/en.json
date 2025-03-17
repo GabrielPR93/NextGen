@@ -41,6 +41,11 @@
     "Permission:Departamento.Create": "Create new departments",
     "Permission:Departamento.Edit": "Edit departments",
     "Permission:Departamento.Delete": "Delete departments",
+
+    "Permission:Categorias": "Category Management",
+    "Permission:Categorias.Create": "Create new categories",
+    "Permission:Categorias.Edit": "Edit categories",
+    "Permission:Categorias.Delete": "Delete categories",
     //Departamentos
 
     "NewDepartamento": "New Department",

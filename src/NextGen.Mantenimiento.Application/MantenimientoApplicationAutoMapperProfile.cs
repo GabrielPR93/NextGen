@@ -5,6 +5,7 @@ using Volo.Abp.AutoMapper;
 using NextGen.Mantenimiento.PersonalDtos;
 using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.Departamento;
+using NextGen.Mantenimiento.Categoria;
 
 namespace NextGen.Mantenimiento;
 
@@ -22,5 +23,6 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
 
         CreateMap<Departamento.Departamento, DepartamentoDto>();
         CreateMap<Departamento.Departamento, DepartamentoLookupDto>();
+        CreateMap<Categoria.Categoria, CategoriaDto>();
     }
 }

@@ -42,6 +42,11 @@
     "Permission:Departamento.Edit": "Editar departamentos",
     "Permission:Departamento.Delete": "Eliminar departamentos",
 
+    "Permission:Categorias": "Gestión de categorias",
+    "Permission:Categorias.Create": "Crear nuevas categorias",
+    "Permission:Categorias.Edit": "Editar categorias",
+    "Permission:Categorias.Delete": "Eliminar categorias",
+
 
     //Departamentos
 
