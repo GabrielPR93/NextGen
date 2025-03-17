@@ -14,7 +14,7 @@
             scrollX: true,
             ajax: function (data, callback, settings) {
                 abp.ajax({
-                    url: '/api/app/personal', // Ruta corregida
+                    url: '/api/app/personal',
                     type: 'GET',
                     data: {
                         maxResultCount: data.length,

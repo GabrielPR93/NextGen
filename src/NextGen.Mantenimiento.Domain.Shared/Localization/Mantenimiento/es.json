@@ -82,6 +82,13 @@
     "Unspecified": "Sistema",
     "SeeAllUsers": "Ver todos los usuarios",
     "TakePhoto": "Tomar foto",
-    "ChoosePhoto": "Escoge una foto"
+    "ChoosePhoto": "Escoge una foto",
+
+    //Categorias
+
+    "Categorias": "Categorias",
+    "NombreCategoria": "Nombre de la categoria",
+    "NuevaCategoria": "Nueva Categoria",
+    "Categoria: 00001": "Ya existe una categoria con el mismo nombre: {nombre}"
   }
 }
