@@ -7,6 +7,7 @@
     "Menu:Empleados": "Empleados",
     "Menu:GestionCorporativa": "Gestión Corporativa",
     "Menu:Departamentos": "Departamentos",
+    "Menu:Categorias": "Categorias",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",
@@ -92,8 +93,11 @@
     //Categorias
 
     "Categorias": "Categorias",
-    "NombreCategoria": "Nombre de la categoria",
+    "NombreCategoria": "Nombre de categoria",
     "NuevaCategoria": "Nueva Categoria",
-    "Categoria: 00001": "Ya existe una categoria con el mismo nombre: {nombre}"
+    "Descripcion": "Descripcion",
+    "Categoria: 00001": "Ya existe una categoria con el mismo nombre: {nombre}",
+    "CategoriaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté categoria '{0}'",
+    
   }
 }

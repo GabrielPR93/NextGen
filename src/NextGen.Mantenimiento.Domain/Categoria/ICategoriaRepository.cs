@@ -15,7 +15,7 @@ namespace NextGen.Mantenimiento.Categoria
             string sorting,
             int maxResultCount = int.MaxValue,
             int skipCount = 0,
-             string filter = null
+            string filter = null
         );
     }
 }

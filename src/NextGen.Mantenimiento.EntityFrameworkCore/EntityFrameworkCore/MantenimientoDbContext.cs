@@ -34,7 +34,7 @@ public class MantenimientoDbContext :
     public DbSet<Personal> Personal { get; set; }
     public DbSet<Departamento.Departamento> Departamento { get; set; }
 
-    public DbSet<Categoria.Categoria> Categorias { get; set; }
+    public DbSet<Categoria.Categoria> Categoria { get; set; }
 
 
     #region Entities from the modules
@@ -163,7 +163,7 @@ public class MantenimientoDbContext :
 
         builder.Entity<Categoria.Categoria>(b =>
         {
-            b.ToTable("Categoria");
+            b.ToTable("Categorias");
             b.ConfigureByConvention();
             b.Property(x => x.Nombre)
                 .IsRequired()

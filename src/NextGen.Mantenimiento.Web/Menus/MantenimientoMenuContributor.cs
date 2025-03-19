@@ -53,21 +53,31 @@ public class MantenimientoMenuContributor : IMenuContributor
     )
 );
 
-        //Departamento
+        //GestionCorporativa
         context.Menu.AddItem(
-            new ApplicationMenuItem(
-            "Departamento",
-            l["Menu:GestionCorporativa"],
-            icon: "fa-solid fa-building"
-        ).AddItem(
-            new ApplicationMenuItem(
-            "Departamento.departamentos",
-            l["Menu:Departamentos"],
-            icon: "fa-solid fa-building",
-            url: "/Departamentos"
-        ).RequirePermissions(MantenimientoPermissions.Departamento.Default)
-    )
-);
+          new ApplicationMenuItem(
+              "GestionCorporativa",
+              l["Menu:GestionCorporativa"],
+              icon: "fa-solid fa-building"
+          ).AddItem(
+              new ApplicationMenuItem(
+                  "Departamento",
+                  l["Menu:Departamentos"],
+                  icon: "fa-solid fa-building",
+                  url: "/Departamentos"
+              ).RequirePermissions(MantenimientoPermissions.Departamento.Default)
+          ).AddItem(
+              new ApplicationMenuItem(
+                  "Categoria",
+                  l["Menu:Categorias"],
+                  icon: "fa-solid fa-tags",
+                  url: "/Categoria"
+              ).RequirePermissions(MantenimientoPermissions.Categoria.Default)
+          )
+      );
+
+
+
 
 
 

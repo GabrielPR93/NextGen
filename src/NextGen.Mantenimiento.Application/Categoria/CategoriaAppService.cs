@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
 namespace NextGen.Mantenimiento.Categoria
 {
+    [RemoteService]
+    [Authorize(MantenimientoPermissions.Categoria.Default)]
     public class CategoriaAppService : MantenimientoAppService, ICategoriaAppService
     {
         private readonly ICategoriaRepository _categoriaRepository;
@@ -20,27 +23,6 @@ namespace NextGen.Mantenimiento.Categoria
             _categoriaRepository = categoriaRepository;
             _categoriaManager = categoriaManager;
         }
-
-        [Authorize(MantenimientoPermissions.Departamento.Create)]
-        public async Task<CategoriaDto> CreateAsync(CreateCategoriaDto input)
-        {
-            var categoria = await _categoriaManager.CreateAsync(
-                input.Id,
-                input.Nombre,
-                input.Descripcion
-            );
-
-            await _categoriaRepository.InsertAsync(categoria);
-
-            return ObjectMapper.Map<Categoria, CategoriaDto>(categoria);
-        }
-
-        [Authorize(MantenimientoPermissions.Departamento.Delete)]
-        public async Task DeleteAsync(int id)
-        {
-            await _categoriaRepository.DeleteAsync(id);
-        }
-
         public async Task<CategoriaDto> GetAsync(int id)
         {
             var categoria = await _categoriaRepository.GetAsync(id);
@@ -71,6 +53,20 @@ namespace NextGen.Mantenimiento.Categoria
             );
         }
 
+        [Authorize(MantenimientoPermissions.Categoria.Create)]
+        public async Task<CategoriaDto> CreateAsync(CreateCategoriaDto input)
+        {
+            var categoria = await _categoriaManager.CreateAsync(
+                input.Id,
+                input.Nombre,
+                input.Descripcion
+            );
+
+            await _categoriaRepository.InsertAsync(categoria);
+
+            return ObjectMapper.Map<Categoria, CategoriaDto>(categoria);
+        }
+
         [Authorize(MantenimientoPermissions.Categoria.Edit)]
         public async Task UpdateAsync(int id, UpdateCategoriaDto input)
         {
@@ -85,6 +81,12 @@ namespace NextGen.Mantenimiento.Categoria
             categoria.Descripcion = input.Descripcion;
 
             await _categoriaRepository.UpdateAsync(categoria);
+        }
+
+        [Authorize(MantenimientoPermissions.Categoria.Delete)]
+        public async Task DeleteAsync(int id)
+        {
+            await _categoriaRepository.DeleteAsync(id);
         }
     }
 }
