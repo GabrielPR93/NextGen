@@ -23,8 +23,9 @@ namespace NextGen.Mantenimiento.Categoria
         public async Task<List<Categoria>> GetListAsync(string sorting, int maxResultCount = int.MaxValue, int skipCount = 0, string filter = null)
         {
         
+            //TODO: REvisar null en descripcion
             return await (await GetDbSetAsync())
-                .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.Nombre.Contains(filter))
+                .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.Nombre.Contains(filter) || (c.Descripcion !=null && c.Descripcion.Contains(filter)))
                 .OrderBy(sorting)
                 .Skip(skipCount)
                 .Take(maxResultCount)

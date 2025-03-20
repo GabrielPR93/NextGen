@@ -1,7 +1,10 @@
 using AutoMapper;
+using NextGen.Mantenimiento.Categoria;
 using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.PersonalDtos;
+using static NextGen.Mantenimiento.Web.Pages.Categoria.CreateModalModel;
+using static NextGen.Mantenimiento.Web.Pages.Categoria.EditModalModel;
 
 namespace NextGen.Mantenimiento.Web;
 
@@ -18,6 +21,12 @@ public class MantenimientoWebAutoMapperProfile : Profile
         CreateMap<Pages.Personal.CreateModalModel.CreatePersonalViewModel, CreateUpdatePersonalDto>();
         CreateMap<PersonalDto, Pages.Personal.EditModalModel.EditPersonalViewModel>();
         CreateMap<Pages.Personal.EditModalModel.EditPersonalViewModel, CreateUpdatePersonalDto>();
+
+        CreateMap<Categoria.Categoria, CategoriaDto>();
+        CreateMap<CreateCategoriaViewModel, CreateCategoriaDto>();
+        CreateMap<CategoriaDto, EditCategoriaViewModel>();
+        CreateMap<EditCategoriaViewModel, UpdateCategoriaDto>();
+
 
     }
 }

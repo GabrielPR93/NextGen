@@ -19,7 +19,7 @@ namespace NextGen.Mantenimiento.Categoria
         public async Task<Categoria> CreateAsync(int id, string nombre, string descripcion)
         {
             Check.NotNullOrWhiteSpace(nombre, nameof(nombre));
-            Check.NotNullOrWhiteSpace(descripcion, nameof(descripcion));
+            
 
             nombre = nombre.ToUpperInvariant();
 
