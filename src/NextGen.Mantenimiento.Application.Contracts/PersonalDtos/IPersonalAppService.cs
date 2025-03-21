@@ -1,4 +1,5 @@
-﻿using NextGen.Mantenimiento.Departamento;
+﻿using NextGen.Mantenimiento.Categoria;
+using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Personal;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace NextGen.Mantenimiento.PersonalDtos
     {
 
         Task<ListResultDto<DepartamentoLookupDto>> GetDepartamentoLookupAsync();
+        Task<ListResultDto<CategoriaLookupDto>> GetCategoriaLookupAsync();
 
 
 

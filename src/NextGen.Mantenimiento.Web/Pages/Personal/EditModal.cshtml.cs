@@ -24,6 +24,8 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
 
         public List<SelectListItem> Departamentos { get; set; }
 
+        public List<SelectListItem> Categorias { get; set; }
+
         private readonly IPersonalAppService _personalAppService;
 
         public EditModalModel(IPersonalAppService personalAppService)
@@ -40,6 +42,10 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
 
             var departamentoLookup = await _personalAppService.GetDepartamentoLookupAsync();
             Departamentos = departamentoLookup.Items
+                .Select(x => new SelectListItem(x.Nombre, x.Id.ToString()))
+                .ToList();
+            var categoriaLookup = await _personalAppService.GetCategoriaLookupAsync();
+            Categorias = categoriaLookup.Items
                 .Select(x => new SelectListItem(x.Nombre, x.Id.ToString()))
                 .ToList();
             return Page(); // Devuelve correctamente la página
@@ -86,6 +92,11 @@ namespace NextGen.Mantenimiento.Web.Pages.Personal
             [Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Form.SelectItems(nameof(Departamentos))]
             [DisplayName("Departamento")]
             public int DepartamentoId { get; set; }
+
+            [Required]
+            [Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Form.SelectItems(nameof(Categorias))]
+            [DisplayName("Categorias")]
+            public int CategoriaId { get; set; }
 
             [Required]
             [DataType(DataType.Date)]

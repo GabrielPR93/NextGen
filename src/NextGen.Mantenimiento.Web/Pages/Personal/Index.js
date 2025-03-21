@@ -71,14 +71,16 @@
                     }
                 },
                 { title: l('Id'), data: "id" },
-                { title: l('Cat-Id'), data: "categoriaId" },
                 { title: l('Nombre'), data: "nombre" },
                 { title: l('Apellidos'), data: "apellidos" },
                 { title: l('DNI'), data: "dni" },
                 { title: l('Telefono'), data: "telefono" },
-                { title: l('Departamento'), data: "nombreDepartamento" },
-                { title: l('Direccion'), data: "direccion" },
                 { title: l('Email'), data: "correoElectronico" },
+                { title: l('Direccion'), data: "direccion" },
+                { title: l('Departamento'), data: "nombreDepartamento" },
+                { title: l('Categoria'), data: "nombreCategoria" },
+                
+                
                 {
                     title: l('FechaNacimiento'),
                     data: "fechaNacimiento",

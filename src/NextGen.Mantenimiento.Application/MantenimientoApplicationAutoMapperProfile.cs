@@ -23,6 +23,7 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
 
         CreateMap<Departamento.Departamento, DepartamentoDto>();
         CreateMap<Departamento.Departamento, DepartamentoLookupDto>();
+        CreateMap<Categoria.Categoria, Categoria.CategoriaLookupDto>();
         CreateMap<Categoria.Categoria, CategoriaDto>();
     }
 }
