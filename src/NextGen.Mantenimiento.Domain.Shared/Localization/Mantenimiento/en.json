@@ -30,6 +30,7 @@
     "SuccessfullyDeleted": "Successfully deleted",
     "SuccessfullyEdited": "Successfully edited",
     "SuccessfullyAdded": "Successfully added",
+    "SuccessfullyCreated": "Successfully created",
     "PersonalDeletionConfirmationMessage": "Are you sure you want to delete {0}?",
     //Permisos
     "Permission:Personal": "Staff",

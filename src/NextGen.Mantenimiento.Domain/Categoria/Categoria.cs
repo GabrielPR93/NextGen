@@ -12,7 +12,7 @@ public class Categoria : Entity<int>
 
     public string Nombre { get; set; }
 
-    public string Descripcion { get; set; }
+    public string? Descripcion { get; set; }
 
     public Categoria()
     {
@@ -23,7 +23,7 @@ public class Categoria : Entity<int>
     {
         Id = id;
         SetName(nombre);
-        Descripcion = descripcion;
+        Descripcion = descripcion ?? string.Empty;
     }
 
     internal Categoria ChangeName(string nombre)

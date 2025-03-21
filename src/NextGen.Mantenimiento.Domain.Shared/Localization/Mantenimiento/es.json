@@ -30,6 +30,7 @@
     "SuccessfullyDeleted": "Eliminado correctamente",
     "SuccessfullyEdited": "Editado correctamente",
     "SuccessfullyAdded": "Agregado correctamente",
+    "SuccessfullyCreated": "Creado Correctamente",
     "PersonalDeletionConfirmationMessage": "¿Estás seguro de que quieres eliminar a {0}?",
     //Permisos
     "Permission:Personal": "Personal",
@@ -97,7 +98,7 @@
     "NuevaCategoria": "Nueva Categoria",
     "Descripcion": "Descripcion",
     "Categoria: 00001": "Ya existe una categoria con el mismo nombre: {nombre}",
-    "CategoriaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté categoria '{0}'",
-    
+    "CategoriaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté categoria '{0}'"
+
   }
 }

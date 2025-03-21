@@ -81,10 +81,12 @@
 
 
     createModal.onResult(function () {
+        abp.notify.success(l('SuccessfullyCreated'));
         dataTable.ajax.reload();
     });
 
     editModal.onResult(function () {
+        abp.notify.success(l('SuccessfullyEdited'));
         dataTable.ajax.reload();
     });
 
