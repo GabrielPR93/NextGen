@@ -21,8 +21,6 @@ namespace NextGen.Mantenimiento.Categoria
             Check.NotNullOrWhiteSpace(nombre, nameof(nombre));
             
 
-            nombre = nombre.ToUpperInvariant();
-
             var existingCategoria = await _categoriaRepository.FindByNameAsync(nombre);
             if (existingCategoria != null)
             {
