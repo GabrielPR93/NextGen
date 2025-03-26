@@ -28,4 +28,12 @@ public static class MantenimientoPermissions
         public const string Delete = Default + ".Delete";
     }
 
+    public static class Empresa
+    {
+        public const string Default = GroupName + ".Empresa";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
+
 }

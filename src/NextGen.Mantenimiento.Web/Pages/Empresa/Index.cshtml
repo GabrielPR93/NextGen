@@ -1,0 +1,36 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using NextGen.Mantenimiento.Localization
+@using NextGen.Mantenimiento.Permissions
+@using Microsoft.AspNetCore.Authorization
+@inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@inject IAuthorizationService AuthorizationService
+@model NextGen.Mantenimiento.Web.Pages.Empresa.IndexModel
+@section scripts
+{
+    <abp-script src="/Pages/Empresa/Index.js" />
+}
+
+@{
+    <abp-card>
+        <abp-card-header>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-card-title>@L["Menu:Empresa"]</abp-card-title>
+                </abp-column>
+                <abp-column size-md="_6" class="text-end">
+                    @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Empresa.Create))
+                    {
+                        <abp-button id="NewEmpresaButton"
+                                    text="@L["NuevaEmpresa"].Value"
+                                    icon="plus"
+                                    button-type="Primary" />
+                    }
+                </abp-column>
+            </abp-row>
+        </abp-card-header>
+        <abp-card-body>
+            <abp-table striped-rows="true" id="EmpresaTable"></abp-table>
+        </abp-card-body>
+    </abp-card>
+}

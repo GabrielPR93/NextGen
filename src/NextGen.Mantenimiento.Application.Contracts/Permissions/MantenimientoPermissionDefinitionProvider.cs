@@ -30,6 +30,12 @@ public class MantenimientoPermissionDefinitionProvider : PermissionDefinitionPro
         categoriaPermission.AddChild(MantenimientoPermissions.Categoria.Create, L("Permission:Categoria.Create"));
         categoriaPermission.AddChild(MantenimientoPermissions.Categoria.Edit, L("Permission:Categoria.Edit"));
         categoriaPermission.AddChild(MantenimientoPermissions.Categoria.Delete, L("Permission:Categoria.Delete"));
+
+        // Definir permisos para "Empresa"
+        var empresaPermission = mantenimientoGroup.AddPermission(MantenimientoPermissions.Empresa.Default, L("Permission:Empresa"));
+        empresaPermission.AddChild(MantenimientoPermissions.Empresa.Create, L("Permission:Empresa.Create"));
+        empresaPermission.AddChild(MantenimientoPermissions.Empresa.Edit, L("Permission:Empresa.Edit"));
+        empresaPermission.AddChild(MantenimientoPermissions.Empresa.Delete, L("Permission:Empresa.Delete"));
     }
 
     private static LocalizableString L(string name)

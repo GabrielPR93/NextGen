@@ -49,6 +49,11 @@
     "Permission:Categorias.Edit": "Editar categorias",
     "Permission:Categorias.Delete": "Eliminar categorias",
 
+    "Permission: Empresa": "Gestión de empresa",
+    "Permission: Empresa.Create": "Crear nueva empresa",
+    "Permission: Empresa.Edit": "Editar empresa",
+    "Permission: Empresa.Delete": "Eliminar empresa",
+
 
     //Departamentos
 
@@ -98,7 +103,16 @@
     "NuevaCategoria": "Nueva Categoria",
     "Descripcion": "Descripcion",
     "Categoria: 00001": "Ya existe una categoria con el mismo nombre: {nombre}",
-    "CategoriaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté categoria '{0}'"
+    "CategoriaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté categoria '{0}'",
+
+    //Empresa
+
+    "Empresa": "Empresa",
+    "NombreEmpresa": "Nombre de empresa",
+    "NuevaEmpresa": "Nueva Empresa",
+    "DescripcionEmpresa": "Descripcion",
+    "Empresa: 00001": "Ya existe una empresa con el mismo nombre: {nombre}",
+    "EmpresaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté empresa '{0}'"
 
   }
 }

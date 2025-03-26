@@ -73,6 +73,13 @@ public class MantenimientoMenuContributor : IMenuContributor
                   icon: "fa-solid fa-tags",
                   url: "/Categoria"
               ).RequirePermissions(MantenimientoPermissions.Categoria.Default)
+          ).AddItem(
+              new ApplicationMenuItem(
+                  "Empresa",
+                  l["Menu:Empresas"],
+                  icon: "fa-solid fa-building",
+                  url: "/Empresa"
+              ).RequirePermissions(MantenimientoPermissions.Empresa.Default)
           )
       );
 

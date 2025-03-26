@@ -36,6 +36,8 @@ public class MantenimientoDbContext :
 
     public DbSet<Categoria.Categoria> Categoria { get; set; }
 
+    public DbSet<Empresa.Empresa> Empresa { get; set; }
+
 
     #region Entities from the modules
 
@@ -171,6 +173,28 @@ public class MantenimientoDbContext :
             b.Property(x => x.Descripcion)
                 .IsRequired()
                 .HasMaxLength(256);
+            b.HasIndex(x => x.Nombre);
+        });
+
+        builder.Entity<Empresa.Empresa>(b =>
+        {
+            b.ToTable("Empresas");
+            b.ConfigureByConvention();
+            b.Property(x => x.Nombre)
+                .IsRequired()
+                .HasMaxLength(128);
+            b.Property(x => x.Direccion)
+                .IsRequired()
+                .HasMaxLength(256);
+            b.Property(x => x.NombreAbreviado)
+                .IsRequired()
+                .HasMaxLength(20);
+            b.Property(x => x.Correo)
+                .IsRequired()
+                .HasMaxLength(256);
+            b.Property(x => x.Logo)
+                .IsRequired()
+                .HasMaxLength(9);
             b.HasIndex(x => x.Nombre);
         });
 

@@ -48,6 +48,11 @@
     "Permission:Categorias.Create": "Create new categories",
     "Permission:Categorias.Edit": "Edit categories",
     "Permission:Categorias.Delete": "Delete categories",
+
+    "Permission: Empresa": "Company Management",
+    "Permission: Empresa.Create": "Create new company",
+    "Permission: Empresa.Edit": "Edit company",
+    "Permission: Empresa.Delete": "Delete company",
     //Departamentos
 
     "NewDepartamento": "New Department",
@@ -62,6 +67,15 @@
     "NuevaCategoria": "New Category",
     "Descripcion": "Description",
     "Categoria: 00001": "There is already a category with the same name: {nombre}",
-    "CategoriaDeletionConfirmationMessage": "Are you sure you want to delete this category '{0}'"
+    "CategoriaDeletionConfirmationMessage": "Are you sure you want to delete this category '{0}'",
+
+    //Empresa
+    "Empresa": "Company",
+    "NombreEmpresa": "Company name",
+    "NuevaEmpresa": "New Company",
+    "Empresa: 00001": "There is already a company with the same name: {nombre}",
+    "EmpresaDeletionConfirmationMessage": "Are you sure you want to delete this company '{0}'"
+
+
   }
 }
