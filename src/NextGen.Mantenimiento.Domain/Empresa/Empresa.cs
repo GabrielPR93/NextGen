@@ -70,7 +70,14 @@ public class Empresa : Entity<int>
 
     private void SetDireccion(string direccion)
     {
-        Direccion = Check.NotNullOrWhiteSpace(direccion, nameof(direccion), maxLength: EmpresaConsts.MaxDireccionLength);
+        if (direccion != null) { 
+
+            Direccion = Check.NotNullOrWhiteSpace(direccion, nameof(direccion), maxLength: EmpresaConsts.MaxDireccionLength);
+        }
+        else
+        {
+            Direccion = null; 
+        }
     }
 
     private void SetCorreo(string correo)

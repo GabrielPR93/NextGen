@@ -1,0 +1,19 @@
+﻿@page
+@using NextGen.Mantenimiento.Localization
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@model NextGen.Mantenimiento.Web.Pages.Empresa.EditModalModel
+@inject IStringLocalizer<MantenimientoResource> L
+@{
+    Layout = null;
+}
+
+<abp-dynamic-form abp-model="Empresa" asp-page="/Empresa/EditModal">
+    <abp-modal>
+        <abp-modal-header title="@L["Edit"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

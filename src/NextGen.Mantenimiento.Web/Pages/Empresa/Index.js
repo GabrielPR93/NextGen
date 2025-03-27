@@ -80,11 +80,11 @@
                     data: "nombreAbreviado"
                 },
                 {
-                    title: l('Dirección'),
+                    title: l('Direccion'),
                     data: "direccion"
                 },
                 {
-                    title: l('Correo'),
+                    title: l('Email'),
                     data: "correo"
                 },
                 {
