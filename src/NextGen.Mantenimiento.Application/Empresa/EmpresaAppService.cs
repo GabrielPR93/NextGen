@@ -90,25 +90,33 @@ namespace NextGen.Mantenimiento.Empresa
 
             return ObjectMapper.Map<Empresa, EmpresaDto>(empresa);
         }
-        //TODO: REvisar el guardado
+        
         [Authorize(MantenimientoPermissions.Empresa.Edit)]
         public async Task UpdateAsync(int id, UpdateEmpresaDto input)
         {
             var empresa = await _dbContext.Empresa
-                                          .Where(e => e.Id == id)
-                                          .FirstOrDefaultAsync();
+                    .Where(e => e.Id == id)
+                    .Select(e => new Empresa
+                    {
+                        Id = e.Id,
+                        Nombre = e.Nombre ?? string.Empty,
+                        NombreAbreviado = e.NombreAbreviado ?? string.Empty,
+                        Direccion = e.Direccion == null ? string.Empty : e.Direccion,
+                        Correo = e.Correo ?? string.Empty,
+                        Logo = e.Logo == null ? new byte[0] : e.Logo
+                    })
+                .FirstOrDefaultAsync();
 
             if (empresa == null)
             {
                 throw new BusinessException($"No se encontró la empresa con ID {id}.");
             }
 
-            // Manejamos valores nulos
-            empresa.Nombre = input.Nombre ?? empresa.Nombre;
-            empresa.NombreAbreviado = input.NombreAbreviado ?? empresa.NombreAbreviado;
-            empresa.Direccion = input.Direccion == null ? string.Empty : input.Direccion;
-            empresa.Correo = input.Correo ?? empresa.Correo;
-            empresa.Logo = input.Logo == null ? new byte[0] : input.Logo;
+            empresa.Nombre = input.Nombre ?? empresa.Nombre ?? string.Empty;
+            empresa.NombreAbreviado = input.NombreAbreviado ?? empresa.NombreAbreviado ?? string.Empty;
+            empresa.Direccion = input.Direccion ?? (empresa.Direccion ?? string.Empty);
+            empresa.Correo = input.Correo ?? empresa.Correo ?? string.Empty;
+            empresa.Logo = input.Logo ?? (empresa.Logo ?? new byte[0]);
 
             await _empresaRepository.UpdateAsync(empresa);
         }
