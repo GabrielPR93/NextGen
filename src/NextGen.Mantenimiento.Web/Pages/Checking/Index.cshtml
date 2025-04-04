@@ -1,0 +1,35 @@
+﻿@page
+@using Microsoft.Extensions.Localization
+@using NextGen.Mantenimiento.Localization
+@using NextGen.Mantenimiento.Permissions
+@using Microsoft.AspNetCore.Authorization
+@inject IStringLocalizer<NextGen.Mantenimiento.Localization.MantenimientoResource> L
+@inject IAuthorizationService AuthorizationService
+@model NextGen.Mantenimiento.Web.Pages.Checking.IndexModel
+@section scripts
+{
+    <abp-script src="/Pages/Checking/Index.js" />
+}
+@{
+    <abp-card>
+        <abp-card-header>
+            <abp-row>
+                <abp-column size-md="_6">
+                    <abp-card-title>@L["Menu:Checking"]</abp-card-title>
+                </abp-column>
+                <abp-column size-md="_6" class="text-end">
+                    @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Checking.Create))
+                    {
+                        <abp-button id="NewCategoriaButton"
+                                    text="@L["NuevoCkecking"].Value"
+                                    icon="plus"
+                                    button-type="Primary" />
+                    }
+                </abp-column>
+            </abp-row>
+        </abp-card-header>
+        <abp-card-body>
+            <abp-table striped-rows="true" id="CheckingTable"></abp-table>
+        </abp-card-body>
+    </abp-card>
+}

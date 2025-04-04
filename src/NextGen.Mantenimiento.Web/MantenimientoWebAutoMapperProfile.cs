@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using NextGen.Mantenimiento.Categoria;
+using NextGen.Mantenimiento.Checking;
 using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Empresa;
 using NextGen.Mantenimiento.Personal;
@@ -42,6 +43,12 @@ public class MantenimientoWebAutoMapperProfile : Profile
         CreateMap<EmpresaDto, EditEmpresaViewModel>()
       .ForMember(dest => dest.Logo, opt => opt.MapFrom(src => src.Logo != null ? new FormFile(new MemoryStream(src.Logo), 0, src.Logo.Length, null, "Logo") : null));
 
+
+        CreateMap<CheckingDiario, CheckingDto>();
+        CreateMap<CheckingDiario, CheckinglookupDto>();
+        //CreateMap<CheckingDto, Pages.Checking.EditModalModel.EditCheckingViewModel>();
+        //CreateMap<Pages.Checking.EditModalModel.EditCheckingViewModel, UpdateCheckingDto>();
+        //CreateMap<Pages.Checking.CreateModalModel.CreateCheckingViewModel, CreateCheckingDto>();
 
     }
 

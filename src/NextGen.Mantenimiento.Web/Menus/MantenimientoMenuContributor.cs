@@ -83,6 +83,17 @@ public class MantenimientoMenuContributor : IMenuContributor
           )
       );
 
+        //Checking
+        context.Menu.AddItem(
+       new ApplicationMenuItem(
+           "Checking",
+           l["Menu:Checking"],
+           icon: "fa-solid fa-clock",
+           url: "/Checking" // Añadir la URL directamente aquí
+       ).RequirePermissions(MantenimientoPermissions.Checking.Default)
+   );
+
+
 
 
 

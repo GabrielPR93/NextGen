@@ -7,4 +7,5 @@ public static class MantenimientoDomainErrorCodes
 
     public const string CategoriaAlreadyExists = "Categoria:00001";
     public const string EmpresaAlreadyExists = "Empresa:00001";
+    public const string CheckingAlreadyExists = "Checking:00001";
 }

@@ -16,6 +16,7 @@ using Volo.Abp.TenantManagement;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using NextGen.Mantenimiento.Entities;
 using NextGen.Mantenimiento.Departamento;
+using NextGen.Mantenimiento.Checking;
 
 
 
@@ -37,6 +38,8 @@ public class MantenimientoDbContext :
     public DbSet<Categoria.Categoria> Categoria { get; set; }
 
     public DbSet<Empresa.Empresa> Empresa { get; set; }
+
+    public DbSet<CheckingDiario> Checking { get; set; }
 
 
     #region Entities from the modules
@@ -196,6 +199,33 @@ public class MantenimientoDbContext :
                 .IsRequired()
                 .HasMaxLength(9);
             b.HasIndex(x => x.Nombre);
+        });
+
+        builder.Entity<CheckingDiario>(b =>
+        {
+            b.ToTable("Checking_Diario");
+            b.ConfigureByConvention();
+            b.Property(x => x.UserId)
+                .IsRequired();
+            b.Property(x => x.HoraEntrada)
+                .IsRequired()
+                .HasColumnType("datetime");
+            b.Property(x => x.HoraSalida)
+                .IsRequired(false)
+                .HasColumnType("datetime");
+            b.Property(x => x.HoraCreacion)
+                    .IsRequired()
+                    .HasColumnType("datetime");
+            b.Property(x => x.NombreUsuario)
+                .IsRequired()
+                .HasMaxLength(128);
+            b.Property(x => x.Nombre)
+            .IsRequired(false)
+            .HasMaxLength(128);
+            b.Property(x => x.Apellidos)
+                .IsRequired(false)
+                .HasMaxLength(128);
+            b.HasIndex(x => x.HoraCreacion);
         });
 
     }

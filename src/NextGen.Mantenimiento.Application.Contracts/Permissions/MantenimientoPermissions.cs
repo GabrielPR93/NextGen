@@ -36,4 +36,14 @@ public static class MantenimientoPermissions
         public const string Delete = Default + ".Delete";
     }
 
+    public static class Checking
+    {
+        public const string Default = GroupName + ".Checking";
+        public const string ViewAll = Default + ".ViewAll";
+        public const string ViewOwn = Default + ".ViewOwn";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
+
 }

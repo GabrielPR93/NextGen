@@ -9,6 +9,7 @@
     "Menu:Departamentos": "Departments",
     "Menu:Categorias": "Categories",
     "Menu:Empresas": "Companies",
+    "Menu:Checking": "Checking",
     "Menu:ContactUs": "Contact Us",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
     "Welcome": "Welcome",
@@ -75,7 +76,22 @@
     "NombreEmpresa": "Company name",
     "NuevaEmpresa": "New Company",
     "Empresa: 00001": "There is already a company with the same name: {nombre}",
-    "EmpresaDeletionConfirmationMessage": "Are you sure you want to delete this company '{0}'"
+    "EmpresaDeletionConfirmationMessage": "Are you sure you want to delete this company '{0}'",
+
+    //Checking
+
+    "Checking": "Checking",
+    "Checking: 00001": "There is already a checking with the same name: {nombre}",
+    "CheckingDeletionConfirmationMessage": "Are you sure you want to delete this checking '{0}'",
+    "Nombre Usuario": "Username",
+    "Fecha de Entrada": "Entry Date",
+    "Hora de Entrada": "Entry Time",
+    "Hora de Salida": "Exit Time",
+    "Hora de Creacion": "Creation Time"
+    
+   
+
+
 
 
   }

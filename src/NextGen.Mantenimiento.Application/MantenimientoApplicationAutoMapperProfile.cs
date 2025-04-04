@@ -7,6 +7,7 @@ using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Categoria;
 using NextGen.Mantenimiento.Empresa;
+using NextGen.Mantenimiento.Checking;
 
 namespace NextGen.Mantenimiento;
 
@@ -28,5 +29,9 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
         CreateMap<Categoria.Categoria, CategoriaDto>();
         CreateMap<Empresa.Empresa, EmpresaLookupDto>();
         CreateMap<Empresa.Empresa, EmpresaDto>();
+
+        CreateMap<CheckingDiario, CheckingDto>();
+        CreateMap<CheckingDiario, CheckinglookupDto>();
+
     }
 }

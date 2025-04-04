@@ -36,6 +36,14 @@ public class MantenimientoPermissionDefinitionProvider : PermissionDefinitionPro
         empresaPermission.AddChild(MantenimientoPermissions.Empresa.Create, L("Permission:Empresa.Create"));
         empresaPermission.AddChild(MantenimientoPermissions.Empresa.Edit, L("Permission:Empresa.Edit"));
         empresaPermission.AddChild(MantenimientoPermissions.Empresa.Delete, L("Permission:Empresa.Delete"));
+
+        // Definir permisos para "Checking"
+        var checkingPermission = mantenimientoGroup.AddPermission(MantenimientoPermissions.Checking.Default, L("Permission:Checking"));
+        checkingPermission.AddChild(MantenimientoPermissions.Checking.ViewAll, L("Permission:Checking.ViewAll"));
+        checkingPermission.AddChild(MantenimientoPermissions.Checking.ViewOwn, L("Permission:Checking.ViewOwn"));
+        checkingPermission.AddChild(MantenimientoPermissions.Checking.Create, L("Permission:Checking.Create"));
+        checkingPermission.AddChild(MantenimientoPermissions.Checking.Edit, L("Permission:Checking.Edit"));
+        checkingPermission.AddChild(MantenimientoPermissions.Checking.Delete, L("Permission:Checking.Delete"));
     }
 
     private static LocalizableString L(string name)

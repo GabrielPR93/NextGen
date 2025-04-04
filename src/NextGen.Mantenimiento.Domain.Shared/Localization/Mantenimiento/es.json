@@ -9,6 +9,7 @@
     "Menu:Departamentos": "Departamentos",
     "Menu:Categorias": "Categorias",
     "Menu:Empresas": "Empresas",
+    "Menu:Checking": "Checking",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",
@@ -113,7 +114,17 @@
     "NuevaEmpresa": "Nueva Empresa",
     "DescripcionEmpresa": "Descripcion",
     "Empresa: 00001": "Ya existe una empresa con el mismo nombre: {nombre}",
-    "EmpresaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté empresa '{0}'"
+    "EmpresaDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté empresa '{0}'",
+
+    //Checking
+    "Checking": "Checking",
+    "Checking: 00001": "Ya existe un checking con el mismo nombre: {nombre}",
+    "CheckingDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté checking '{0}'",
+    "Nombre Usuario": "Nombre Usuario",
+    "Fecha de Entrada": "Fecha de Entrada",
+    "Hora de Entrada": "Hora de Entrada",
+    "Hora de Salida": "Hora de Salida ",
+    "Hora de Creacion": "Hora de Creación "
 
   }
 }
