@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NextGen.Mantenimiento.Application.Contracts\NextGen.Mantenimiento.Application.Contracts.csproj" />
     <ProjectReference Include="..\NextGen.Mantenimiento.Domain\NextGen.Mantenimiento.Domain.csproj" />
   </ItemGroup>
 

@@ -10,6 +10,7 @@ using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Users;
 using Volo.Abp.Domain.Repositories;
+using NextGen.Mantenimiento.Permissions;
 
 namespace NextGen.Mantenimiento.EntityFrameworkCore.Checking
 {
@@ -35,7 +36,7 @@ namespace NextGen.Mantenimiento.EntityFrameworkCore.Checking
         {
             var currentUserId = _currentUser.Id;
 
-            if (await _authorizationService.IsGrantedAsync("CheckingDiario.ViewAll"))
+            if (await _authorizationService.IsGrantedAsync("MantenimientoPermissions.Checking.ViewAll"))
             {
                 return await (await GetDbSetAsync()).FirstOrDefaultAsync(c => c.NombreUsuario == nombreUsuario);
             }
@@ -45,13 +46,29 @@ namespace NextGen.Mantenimiento.EntityFrameworkCore.Checking
 
         public async Task<List<CheckingDiario>> GetListAsync(string sorting, int maxResultCount = int.MaxValue, int skipCount = 0, string filter = null)
         {
+            if (await _authorizationService.IsGrantedAsync(MantenimientoPermissions.Checking.ViewAll))
+            {
+                // Puede ver todo
+                return await (await GetDbSetAsync())
+                    .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.Nombre.Contains(filter) || c.NombreUsuario.Contains(filter))
+                    .OrderBy(sorting)
+                    .Skip(skipCount)
+                    .Take(maxResultCount)
+                    .ToListAsync();
+            }
+            else
+            {
+                var currentUserName = _currentUser.UserName;
+                return await (await GetDbSetAsync())
+                    .Where(c => c.NombreUsuario == currentUserName)
+                    .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.Nombre.Contains(filter) || c.NombreUsuario.Contains(filter))
+                    .OrderBy(sorting)
+                    .Skip(skipCount)
+                    .Take(maxResultCount)
+                    .ToListAsync();
+            }
 
-            return await (await GetDbSetAsync())
-                .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.Nombre.Contains(filter) || c.NombreUsuario.Contains(filter))
-                .OrderBy(sorting)
-                .Skip(skipCount)
-                .Take(maxResultCount)
-                .ToListAsync();
         }
+
     }
 }

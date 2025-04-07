@@ -32,7 +32,7 @@ public class MantenimientoDbContext :
 {
     /* Add DbSet properties for your Aggregate Roots / Entities here. */
 
-    public DbSet<Personal> Personal { get; set; }
+    public DbSet<Entities.Personal> Personal { get; set; }
     public DbSet<Departamento.Departamento> Departamento { get; set; }
 
     public DbSet<Categoria.Categoria> Categoria { get; set; }
@@ -95,7 +95,7 @@ public class MantenimientoDbContext :
 
         /* Configure your own tables/entities inside here */
 
-        builder.Entity<Personal>(b =>
+        builder.Entity<Entities.Personal>(b =>
         {
         
             b.ToTable("Personal");
