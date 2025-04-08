@@ -8,14 +8,7 @@ namespace NextGen.Mantenimiento.Checking
 {
     public class UpdateCheckingDto
     {
-        public int Id { get; set; }
-        public Guid UserId { get; set; }
-        public DateTime HoraEntrada { get; set; }
         public DateTime? HoraSalida { get; set; }
-        public DateTime HoraCreacion { get; set; }
 
-        public string NombreUsuario { get; set; }
-        public string Nombre { get; set; }
-        public string Apellidos { get; set; }
     }
 }

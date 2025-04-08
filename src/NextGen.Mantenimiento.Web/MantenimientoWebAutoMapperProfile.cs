@@ -46,9 +46,7 @@ public class MantenimientoWebAutoMapperProfile : Profile
 
         CreateMap<CheckingDiario, CheckingDto>();
         CreateMap<CheckingDiario, CheckinglookupDto>();
-        //CreateMap<CheckingDto, Pages.Checking.EditModalModel.EditCheckingViewModel>();
-        //CreateMap<Pages.Checking.EditModalModel.EditCheckingViewModel, UpdateCheckingDto>();
-        //CreateMap<Pages.Checking.CreateModalModel.CreateCheckingViewModel, CreateCheckingDto>();
+        CreateMap<CreateCheckingDto, CheckingDiario>();
 
     }
 

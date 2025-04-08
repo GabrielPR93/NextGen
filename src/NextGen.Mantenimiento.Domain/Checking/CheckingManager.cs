@@ -21,12 +21,12 @@ namespace NextGen.Mantenimiento.Checking
             Check.NotNull(userId, nameof(userId));
             Check.NotNull(nombreusuario, nameof(nombreusuario));
 
-            var existingChecking = await _checkingRepository.FindByUserAndDateAsync(nombreusuario);
-            if (existingChecking != null)
+            var OpenChecking = await _checkingRepository.FindLastOpenByUserAsync(nombreusuario);
+            if (OpenChecking != null)
             {
                 throw new CheckingAlreadyExistsException(userId);
             }
-            return new CheckingDiario(GuidGenerator.Create(), GuidGenerator.Create(), horaEntrada, horaSalida, DateTime.UtcNow, nombreusuario, nombre, apellidos);
+            return new CheckingDiario(GuidGenerator.Create(), userId, horaEntrada, horaSalida, DateTime.UtcNow, nombreusuario, nombre, apellidos);
         }
     }
 }

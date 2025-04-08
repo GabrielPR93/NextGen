@@ -20,10 +20,14 @@
                 <abp-column size-md="_6" class="text-end">
                     @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Checking.Create))
                     {
-                        <abp-button id="NewCategoriaButton"
-                                    text="@L["NuevoCkecking"].Value"
+                        <abp-button id="NewCheckingButton"
+                                    text="@L["Registrar Entrada"].Value"
                                     icon="plus"
                                     button-type="Primary" />
+                        <abp-button id="ExitCheckingButton"
+                                    text="@L["Registrar Salida"].Value"
+                                    icon="plus"
+                                    button-type="Primary" disabled="true" />
                     }
                 </abp-column>
             </abp-row>

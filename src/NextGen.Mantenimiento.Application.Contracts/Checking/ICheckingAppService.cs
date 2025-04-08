@@ -15,7 +15,10 @@ namespace NextGen.Mantenimiento.Checking
         Task<CheckingDto> GetAsync(Guid id);
         Task<PagedResultDto<CheckingDto>> GetListAsync(GetAllListDto input);
         Task<CheckingDto> CreateAsync(CreateCheckingDto input);
-        //Task UpdateAsync(int id, UpdateCheckingDto input);
+
+        Task<CheckingDto> GetLastOpenCheckingAsync();
+
+        Task <CheckingDto>UpdateAsync(Guid id, UpdateCheckingDto input);
         Task DeleteAsync(Guid id);
     }
 }

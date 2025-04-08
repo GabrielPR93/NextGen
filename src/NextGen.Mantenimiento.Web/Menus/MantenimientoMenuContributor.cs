@@ -89,7 +89,7 @@ public class MantenimientoMenuContributor : IMenuContributor
            "Checking",
            l["Menu:Checking"],
            icon: "fa-solid fa-clock",
-           url: "/Checking" // Añadir la URL directamente aquí
+           url: "/Checking"
        ).RequirePermissions(MantenimientoPermissions.Checking.Default)
    );
 

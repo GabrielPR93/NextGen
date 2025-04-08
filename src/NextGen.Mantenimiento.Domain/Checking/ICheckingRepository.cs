@@ -9,7 +9,10 @@ namespace NextGen.Mantenimiento.Checking
 {
     public interface ICheckingRepository : IRepository<CheckingDiario, Guid>
     {
-        Task<CheckingDiario> FindByUserAndDateAsync(string nombreUsuario);
+        Task<CheckingDiario> FindByUserAndDateAsync(string nombreUsuario, DateTime horaEntrada);
+
+        Task<CheckingDiario?> FindLastOpenByUserAsync(string nombreUsuario);
+
 
         Task<List<CheckingDiario>> GetListAsync(
             string sorting,

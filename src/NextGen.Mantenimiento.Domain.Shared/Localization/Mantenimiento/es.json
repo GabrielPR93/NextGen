@@ -124,7 +124,9 @@
     "Fecha de Entrada": "Fecha de Entrada",
     "Hora de Entrada": "Hora de Entrada",
     "Hora de Salida": "Hora de Salida ",
-    "Hora de Creacion": "Hora de Creación "
+    "Hora de Creacion": "Hora de Creación ",
+    "EntrySuccessfullyRecorded": "Entrada registrada exitosamente",
+    "OutSuccessfullyRecorded": "Salida registrada exitosamente"
 
   }
 }

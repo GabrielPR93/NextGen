@@ -11,7 +11,7 @@ namespace NextGen.Mantenimiento.Checking
     {
         public CheckingAlreadyExistsException(Guid id) : base(MantenimientoDomainErrorCodes.CheckingAlreadyExists)
         {
-            WithData("Usuario ya logueado hoy", id);
+            WithData("Ya existe un registro de entrada sin hora de salida.", id);
         }
     }
 }

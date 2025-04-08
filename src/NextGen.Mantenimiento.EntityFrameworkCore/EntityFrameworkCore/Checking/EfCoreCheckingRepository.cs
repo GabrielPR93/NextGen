@@ -32,16 +32,25 @@ namespace NextGen.Mantenimiento.EntityFrameworkCore.Checking
         }
 
         
-        public async Task<CheckingDiario> FindByUserAndDateAsync(string nombreUsuario)
+        public async Task<CheckingDiario> FindByUserAndDateAsync(string nombreUsuario, DateTime horaEntrada)
         {
             var currentUserId = _currentUser.Id;
 
-            if (await _authorizationService.IsGrantedAsync("MantenimientoPermissions.Checking.ViewAll"))
+            if (await _authorizationService.IsGrantedAsync(MantenimientoPermissions.Checking.ViewAll))
             {
-                return await (await GetDbSetAsync()).FirstOrDefaultAsync(c => c.NombreUsuario == nombreUsuario);
+                return await (await GetDbSetAsync()).FirstOrDefaultAsync(c => c.NombreUsuario == nombreUsuario && c.HoraEntrada.Date == horaEntrada.Date);
             }
 
-            return await (await GetDbSetAsync()).FirstOrDefaultAsync(c => c.NombreUsuario == nombreUsuario);
+            return await (await GetDbSetAsync()).FirstOrDefaultAsync(c => c.NombreUsuario == nombreUsuario && c.HoraEntrada.Date == horaEntrada.Date);
+        }
+
+
+        public async Task<CheckingDiario?> FindLastOpenByUserAsync(string nombreUsuario)
+        {
+            return await (await GetDbSetAsync())
+                .Where(x => x.NombreUsuario == nombreUsuario && x.HoraSalida == null)
+                .OrderByDescending(x => x.HoraEntrada)
+                .FirstOrDefaultAsync();
         }
 
         public async Task<List<CheckingDiario>> GetListAsync(string sorting, int maxResultCount = int.MaxValue, int skipCount = 0, string filter = null)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Permissions;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace NextGen.Mantenimiento.Checking
             _checkingRepository = checkingRepository;
             _checkingManager = checkingManager;
         }
-
+        
         public async Task<CheckingDto> GetAsync(Guid id)
         {
             var checking = await _checkingRepository.GetAsync(id);
@@ -58,9 +59,11 @@ namespace NextGen.Mantenimiento.Checking
         [Authorize(MantenimientoPermissions.Checking.Create)]
         public async Task<CheckingDto> CreateAsync(CreateCheckingDto input)
         {
-            var checking = await _checkingManager.CreateAsync(
-                input.Id,
-                input.UserId,
+            var checking = ObjectMapper.Map<CreateCheckingDto, CheckingDiario>(input);
+
+            checking = await _checkingManager.CreateAsync(
+                Guid.NewGuid(),
+                CurrentUser.Id ?? Guid.Empty,
                 input.HoraEntrada,
                 input.HoraSalida,
                 input.HoraCreacion,
@@ -75,6 +78,28 @@ namespace NextGen.Mantenimiento.Checking
 
             return ObjectMapper.Map<CheckingDiario, CheckingDto>(checking);
         }
+
+        [Authorize(MantenimientoPermissions.Checking.Edit)]
+        public async Task<CheckingDto> UpdateAsync(Guid id, UpdateCheckingDto input)
+        {
+            var checking = await _checkingRepository.GetAsync(id);
+
+            checking.HoraSalida = input.HoraSalida ?? DateTime.UtcNow;
+
+            await _checkingRepository.UpdateAsync(checking);
+
+            return ObjectMapper.Map<CheckingDiario, CheckingDto>(checking);
+        }
+
+        [System.Web.Mvc.HttpGet]
+        [System.Web.Mvc.Route("api/app/checking/open")]
+        [Authorize(MantenimientoPermissions.Checking.Create)]
+        public async Task<CheckingDto> GetLastOpenCheckingAsync()
+        {
+            var checking = await _checkingRepository.FindLastOpenByUserAsync(CurrentUser.UserName);
+            return checking != null ? ObjectMapper.Map<CheckingDiario, CheckingDto>(checking) : null;
+        }
+
 
         [Authorize(MantenimientoPermissions.Checking.Delete)]
         public async Task DeleteAsync(Guid id)

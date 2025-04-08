@@ -87,9 +87,12 @@
     "Fecha de Entrada": "Entry Date",
     "Hora de Entrada": "Entry Time",
     "Hora de Salida": "Exit Time",
-    "Hora de Creacion": "Creation Time"
-    
-   
+    "Hora de Creacion": "Creation Time",
+    "EntrySuccessfullyRecorded": "Time successfully recorded",
+    "OutSuccessfullyRecorded": "Exit successfully recorded"
+
+
+
 
 
 
