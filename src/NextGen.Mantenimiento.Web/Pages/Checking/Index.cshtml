@@ -21,12 +21,12 @@
                     @if (await AuthorizationService.IsGrantedAsync(MantenimientoPermissions.Checking.Create))
                     {
                         <abp-button id="NewCheckingButton"
-                                    text="@L["Registrar Entrada"].Value"
-                                    icon="plus"
+                                    text="@L[" Registrar Entrada"].Value"
+                                    icon="door-open"
                                     button-type="Primary" />
                         <abp-button id="ExitCheckingButton"
-                                    text="@L["Registrar Salida"].Value"
-                                    icon="plus"
+                                    text="@L[" Registrar Salida"].Value"
+                                    icon="arrow-right-from-bracket"
                                     button-type="Primary" disabled="true" />
                     }
                 </abp-column>

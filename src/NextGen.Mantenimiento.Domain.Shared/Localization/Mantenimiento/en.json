@@ -89,7 +89,9 @@
     "Hora de Salida": "Exit Time",
     "Hora de Creacion": "Creation Time",
     "EntrySuccessfullyRecorded": "Time successfully recorded",
-    "OutSuccessfullyRecorded": "Exit successfully recorded"
+    "OutSuccessfullyRecorded": "Exit successfully recorded",
+    "Registrar Entrada": "Register Entry",
+    "Registrar Salida": "Register Exit"
 
 
 

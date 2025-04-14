@@ -81,8 +81,8 @@
                     title: l('Hora de Entrada'),
                     data: "horaEntrada",
                     render: function (data, type, row) {
-                        var fecha = new Date(data);
-                        return fecha.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                        var fecha = new Date(data + 'Z');
+                        return fecha.toLocaleTimeString('es-Es', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone:'Europe/Madrid' });
                     }
                 },
                 {
@@ -91,8 +91,8 @@
                     render: function (data, type, row) {
                         try {
                             if (data) {
-                                var fecha = new Date(data);
-                                return fecha.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                                var fecha = new Date(data + 'Z');
+                                return fecha.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Europe/Madrid' });
                             }
                         } catch (e) {
                             console.warn('Error al formatear horaSalida:', data);
@@ -100,14 +100,13 @@
                         return '-';
                     }
                 },
-                {
-                    title: l('Hora de Creacion'),
-                    data: "horaCreacion"
-                },
+
 
             ]
         })
     );
+
+    // Botón para crear un nuevo checking
 
     $('#NewCheckingButton').click(function (e) {
         e.preventDefault();
@@ -151,26 +150,23 @@
 
         // Primero, obtener el último registro del usuario actual
         abp.ajax({
-            url: '/api/app/checking',
+            url: '/api/app/checking/last-open-checking',
             type: 'GET',
-            data: {
-                filter: abp.currentUser.userName
-            }
-        }).done(function (result) {
-            var ultimoRegistro = result.items.find(x => x.horaSalida == null && x.nombreUsuario === abp.currentUser.userName);
-
-            if (!ultimoRegistro) {
+        }).done(function (ultimoRegistro) {
+            if (!ultimoRegistro || ultimoRegistro.horaSalida !== null) {
                 abp.notify.warn("No hay entrada activa para registrar la salida.");
+                $('#NewCheckingButton').prop('disabled', false);
+                $('#ExitCheckingButton').prop('disabled', true).removeData('checkingId');
                 return;
             }
 
+            var now = new Date();
             // Actualizar el registro con la hora de salida
             abp.ajax({
                 url: '/api/app/checking/' + ultimoRegistro.id,
                 type: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify({
-                    ...ultimoRegistro,
                     horaSalida: now.toISOString()
                 })
             }).done(function () {
@@ -186,6 +182,7 @@
         });
     });
 
+    //Validacion de que boton de checking se debe habilitar o deshabilitar dependiendo de si hay un checking abierto o no
     function validarBotonesChecking() {
         abp.ajax({
             url: '/api/app/checking/last-open-checking',

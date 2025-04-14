@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Permissions;
 using System;
 using System.Collections.Generic;
@@ -92,7 +91,7 @@ namespace NextGen.Mantenimiento.Checking
         }
 
         [System.Web.Mvc.HttpGet]
-        [System.Web.Mvc.Route("api/app/checking/open")]
+        [System.Web.Mvc.Route("api/app/checking/last-open-checking")]
         [Authorize(MantenimientoPermissions.Checking.Create)]
         public async Task<CheckingDto> GetLastOpenCheckingAsync()
         {

@@ -126,7 +126,9 @@
     "Hora de Salida": "Hora de Salida ",
     "Hora de Creacion": "Hora de Creación ",
     "EntrySuccessfullyRecorded": "Entrada registrada exitosamente",
-    "OutSuccessfullyRecorded": "Salida registrada exitosamente"
+    "OutSuccessfullyRecorded": "Salida registrada exitosamente",
+    "Registrar Entrada": "Registrar Entrada",
+    "Registrar Salida": "Registrar Salida"
 
   }
 }
