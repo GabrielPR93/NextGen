@@ -10,6 +10,7 @@
     "Menu:Categorias": "Categories",
     "Menu:Empresas": "Companies",
     "Menu:Checking": "Checking",
+    "Menu:TipoAcreditaciones": "Type of Accreditation",
     "Menu:ContactUs": "Contact Us",
     "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP framework. For more information visit",
     "Welcome": "Welcome",
@@ -91,7 +92,11 @@
     "EntrySuccessfullyRecorded": "Time successfully recorded",
     "OutSuccessfullyRecorded": "Exit successfully recorded",
     "Registrar Entrada": "Register Entry",
-    "Registrar Salida": "Register Exit"
+    "Registrar Salida": "Register Exit",
+
+    //TipoAcreditaciones
+    "TipoAcreditaciones": "Type of Accreditation",
+    "TipoAcreditacion:00001": "There is already an accreditation with the same name: {nombre}"
 
 
 

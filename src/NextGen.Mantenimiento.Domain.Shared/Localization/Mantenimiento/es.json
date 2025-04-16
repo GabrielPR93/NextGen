@@ -10,6 +10,7 @@
     "Menu:Categorias": "Categorias",
     "Menu:Empresas": "Empresas",
     "Menu:Checking": "Checking",
+    "Menu:TipoAcreditaciones": "Tipo Acreditaciones",
     "Menu:ContactUs": "Contáctenos",
     "Menu:ArticleSample": "Muestra de artículo",
     "Home": "Hogar",
@@ -128,7 +129,13 @@
     "EntrySuccessfullyRecorded": "Entrada registrada exitosamente",
     "OutSuccessfullyRecorded": "Salida registrada exitosamente",
     "Registrar Entrada": "Registrar Entrada",
-    "Registrar Salida": "Registrar Salida"
+    "Registrar Salida": "Registrar Salida",
+
+    //TipoAcreditaciones
+
+    "TipoAcreditaciones": "Tipo Acreditaciones",
+    "TipoAcreditacion:00001": "Ya existe una Acreditacion con el mismo nombre: {nombre}"
+
 
   }
 }

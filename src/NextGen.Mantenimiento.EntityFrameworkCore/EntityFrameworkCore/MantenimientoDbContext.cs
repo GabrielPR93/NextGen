@@ -17,6 +17,7 @@ using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using NextGen.Mantenimiento.Entities;
 using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Checking;
+using NextGen.Mantenimiento.TipoAcreditaciones;
 
 
 
@@ -40,6 +41,8 @@ public class MantenimientoDbContext :
     public DbSet<Empresa.Empresa> Empresa { get; set; }
 
     public DbSet<CheckingDiario> Checking { get; set; }
+
+    public DbSet<TipoAcreditaciones.TipoAcreditaciones> TipoAcreditaciones { get; set; }
 
 
     #region Entities from the modules
@@ -226,6 +229,23 @@ public class MantenimientoDbContext :
                 .IsRequired(false)
                 .HasMaxLength(128);
             b.HasIndex(x => x.HoraCreacion);
+        });
+
+        builder.Entity<TipoAcreditaciones.TipoAcreditaciones>(b => 
+        {
+            b.ToTable("Tipo_Acreditaciones");
+            b.ConfigureByConvention();
+            b.Property(x => x.Nombre)
+                .IsRequired()
+                .HasMaxLength(TipoAcreditacionesConsts.MaxNameLength);
+            b.Property(x => x.Nivel)
+                .IsRequired(false);
+            b.Property(x => x.Duracion)
+                .IsRequired(false);
+            b.Property(x => x.Descripcion)
+                .IsRequired(false)
+                .HasMaxLength(TipoAcreditacionesConsts.MaxDescriptionLength);
+            b.HasIndex(x => x.Nombre);
         });
 
     }

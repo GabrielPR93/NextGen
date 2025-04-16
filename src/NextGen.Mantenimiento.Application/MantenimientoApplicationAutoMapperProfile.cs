@@ -8,6 +8,7 @@ using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Categoria;
 using NextGen.Mantenimiento.Empresa;
 using NextGen.Mantenimiento.Checking;
+using NextGen.Mantenimiento.TipoAcreditaciones;
 
 namespace NextGen.Mantenimiento;
 
@@ -32,6 +33,9 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
 
         CreateMap<CheckingDiario, CheckingDto>();
         CreateMap<CheckingDiario, CheckinglookupDto>();
+
+        CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesDto>();
+        CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesLookupDto>();
 
     }
 }

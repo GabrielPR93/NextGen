@@ -6,7 +6,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "Checking",
+   "OutputPath": "TipoAcreditaciones",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "NextGen.Mantenimiento",
    "Schemas": null,
@@ -15,7 +15,7 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Checking_Diario]",
+         "Name": "[dbo].[Tipo_Acreditaciones]",
          "ObjectType": 0
       }
    ],

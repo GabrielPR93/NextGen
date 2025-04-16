@@ -6,6 +6,7 @@ using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Empresa;
 using NextGen.Mantenimiento.Personal;
 using NextGen.Mantenimiento.PersonalDtos;
+using NextGen.Mantenimiento.TipoAcreditaciones;
 using System.IO;
 using static NextGen.Mantenimiento.Web.Pages.Categoria.CreateModalModel;
 using static NextGen.Mantenimiento.Web.Pages.Categoria.EditModalModel;
@@ -47,6 +48,10 @@ public class MantenimientoWebAutoMapperProfile : Profile
         CreateMap<CheckingDiario, CheckingDto>();
         CreateMap<CheckingDiario, CheckinglookupDto>();
         CreateMap<CreateCheckingDto, CheckingDiario>();
+
+        CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesDto>();
+        CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesLookupDto>();
+        CreateMap<CreateTipoAcreditacionesDto, TipoAcreditaciones.TipoAcreditaciones>();
 
     }
 

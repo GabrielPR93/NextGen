@@ -92,12 +92,15 @@ public class MantenimientoMenuContributor : IMenuContributor
            url: "/Checking"
        ).RequirePermissions(MantenimientoPermissions.Checking.Default)
    );
-
-
-
-
-
-
+        //TipoAcreditaciones
+        context.Menu.AddItem(
+            new ApplicationMenuItem(
+                "TipoAcreditaciones",
+                l["Menu:TipoAcreditaciones"],
+                icon: "fa-solid fa-id-card",
+                url: "/TipoAcreditaciones"
+            ).RequirePermissions(MantenimientoPermissions.TipoAcreditaciones.Default)
+        );
 
         //Administration
         var administration = context.Menu.GetAdministration();
