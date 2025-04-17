@@ -96,7 +96,13 @@
 
     //TipoAcreditaciones
     "TipoAcreditaciones": "Type of Accreditation",
-    "TipoAcreditacion:00001": "There is already an accreditation with the same name: {nombre}"
+    "TipoAcreditacion:00001": "There is already an accreditation with the same name: {nombre}",
+    "TipoAcreditacionDeletionConfirmationMessage": "Are you sure you want to delete this type of accreditation '{0}'",
+    "Nombre de Acreditacion": "Accreditation name",
+    "Nivel": "Level",
+    "Duracion": "Duration",
+    "NuevaAcreditacion": "New Accreditation"
+    
 
 
 

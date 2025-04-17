@@ -134,7 +134,12 @@
     //TipoAcreditaciones
 
     "TipoAcreditaciones": "Tipo Acreditaciones",
-    "TipoAcreditacion:00001": "Ya existe una Acreditacion con el mismo nombre: {nombre}"
+    "TipoAcreditacion:00001": "Ya existe una Acreditacion con el mismo nombre: {nombre}",
+    "TipoAcreditacionDeletionConfirmationMessage": "Estás seguro de que quieres eliminar esté tipo de acreditacion '{0}'",
+    "Nombre de Acreditacion": "Nombre de Acreditacion",
+    "Nivel": "Nivel",
+    "Duracion": "Duracion",
+    "NuevaAcreditacion": "Nueva Acreditacion"
 
 
   }

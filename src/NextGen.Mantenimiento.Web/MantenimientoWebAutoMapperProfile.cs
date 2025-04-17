@@ -52,6 +52,9 @@ public class MantenimientoWebAutoMapperProfile : Profile
         CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesDto>();
         CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesLookupDto>();
         CreateMap<CreateTipoAcreditacionesDto, TipoAcreditaciones.TipoAcreditaciones>();
+        CreateMap<Pages.TipoAcreditaciones.CreateModalModel.CreateTipoAcreditacionesViewModel, CreateTipoAcreditacionesDto>();
+        CreateMap<TipoAcreditacionesDto, Pages.TipoAcreditaciones.EditModalModel.EditTipoAcreditacionesViewModel>();
+        CreateMap<Pages.TipoAcreditaciones.EditModalModel.EditTipoAcreditacionesViewModel, UpdateTipoAcreditacionesDto>();
 
     }
 

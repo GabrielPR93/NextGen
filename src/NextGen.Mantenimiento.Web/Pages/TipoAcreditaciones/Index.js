@@ -45,7 +45,7 @@
                                 visible: abp.auth.isGranted('Mantenimiento.TipoAcreditaciones.Delete'),
                                 action: function (data) {
                                     abp.message.confirm(
-                                        l('TipoAcreditacionesDeletionConfirmationMessage', data.record.nombre),
+                                        l('TipoAcreditacionDeletionConfirmationMessage', data.record.nombre),
                                         l('AreYouSure'),
                                         function (confirmed) {
                                             if (confirmed) {
