@@ -6,7 +6,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "TipoAcreditaciones",
+   "OutputPath": "AcreditacionesAsignadas",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "NextGen.Mantenimiento",
    "Schemas": null,
@@ -15,7 +15,7 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[Tipo_Acreditaciones]",
+         "Name": "[dbo].[Acreditaciones_Asignadas]",
          "ObjectType": 0
       }
    ],
