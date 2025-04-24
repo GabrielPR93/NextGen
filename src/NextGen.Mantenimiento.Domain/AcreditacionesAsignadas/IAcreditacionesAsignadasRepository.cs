@@ -9,7 +9,7 @@ namespace NextGen.Mantenimiento.AcreditacionesAsignadas
 {
     public interface IAcreditacionesAsignadasRepository : IRepository<AcreditacionesAsignadas, int>
     {
-        Task<AcreditacionesAsignadas> FindByNameAsync(string nombre);
+        //Task<AcreditacionesAsignadas> FindByNameAsync(string nombre);
         Task<AcreditacionesAsignadas> FindByIdAsync(int id);
         Task<List<AcreditacionesAsignadas>> GetListAsync(
             string sorting,

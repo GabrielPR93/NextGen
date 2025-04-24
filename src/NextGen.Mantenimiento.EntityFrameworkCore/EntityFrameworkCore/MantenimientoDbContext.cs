@@ -44,6 +44,8 @@ public class MantenimientoDbContext :
 
     public DbSet<TipoAcreditaciones.TipoAcreditaciones> TipoAcreditaciones { get; set; }
 
+    public DbSet<AcreditacionesAsignadas.AcreditacionesAsignadas> AcreditacionesAsignadas { get; set; }
+
 
     #region Entities from the modules
 
@@ -246,6 +248,27 @@ public class MantenimientoDbContext :
                 .IsRequired(false)
                 .HasMaxLength(TipoAcreditacionesConsts.MaxDescriptionLength);
             b.HasIndex(x => x.Nombre);
+        });
+
+        builder.Entity<AcreditacionesAsignadas.AcreditacionesAsignadas>(b =>
+        {
+            b.ToTable("Acreditaciones_Asignadas");
+            b.ConfigureByConvention();
+            b.Property(x => x.PersonalId)
+                .IsRequired();
+            b.Property(x => x.PersonalId)
+                .IsRequired();
+            b.Property(x => x.EmpresaId)
+                .IsRequired(false);
+            b.Property(x => x.AcreditacionId)
+            .IsRequired();
+            b.Property(x => x.FechaEmision)
+                .IsRequired()
+                .HasColumnType("datetime");
+            b.Property(x => x.FechaCaducidad)
+                .IsRequired(false)
+                .HasColumnType("datetime");
+            b.HasIndex(x => x.PersonalId);
         });
 
     }
