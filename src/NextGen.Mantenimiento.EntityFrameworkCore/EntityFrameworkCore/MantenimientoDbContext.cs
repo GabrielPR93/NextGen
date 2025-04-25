@@ -18,6 +18,7 @@ using NextGen.Mantenimiento.Entities;
 using NextGen.Mantenimiento.Departamento;
 using NextGen.Mantenimiento.Checking;
 using NextGen.Mantenimiento.TipoAcreditaciones;
+using NextGen.Mantenimiento.AcreditacionesAsignadas;
 
 
 

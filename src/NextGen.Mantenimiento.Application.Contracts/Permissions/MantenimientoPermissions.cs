@@ -54,4 +54,12 @@ public static class MantenimientoPermissions
         public const string Delete = Default + ".Delete";
     }
 
+    public static class AcreditacionesAsignadas
+    {
+        public const string Default = GroupName + ".AcreditacionesAsignadas";
+        public const string Create = Default + ".Create";
+        public const string Edit = Default + ".Edit";
+        public const string Delete = Default + ".Delete";
+    }
+
 }

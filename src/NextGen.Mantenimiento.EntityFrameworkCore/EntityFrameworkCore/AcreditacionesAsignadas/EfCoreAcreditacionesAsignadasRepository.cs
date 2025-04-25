@@ -28,6 +28,7 @@ namespace NextGen.Mantenimiento.AcreditacionesAsignadas
         }
         public async Task<List<AcreditacionesAsignadas>> GetListAsync(string sorting, int maxResultCount = int.MaxValue, int skipCount = 0, string filter = null)
         {
+            sorting ??= nameof(AcreditacionesAsignadas.Id);
             return await (await GetDbSetAsync())
                 .WhereIf(!filter.IsNullOrWhiteSpace(), c => c.FechaCaducidad != null && c.PersonalId != null)
                 .OrderBy(c => EF.Property<object>(c, sorting)) 

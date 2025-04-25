@@ -50,6 +50,12 @@ public class MantenimientoPermissionDefinitionProvider : PermissionDefinitionPro
         tipoAcreditacionesPermission.AddChild(MantenimientoPermissions.TipoAcreditaciones.Create, L("Permission:TipoAcreditaciones.Create"));
         tipoAcreditacionesPermission.AddChild(MantenimientoPermissions.TipoAcreditaciones.Edit, L("Permission:TipoAcreditaciones.Edit"));
         tipoAcreditacionesPermission.AddChild(MantenimientoPermissions.TipoAcreditaciones.Delete, L("Permission:TipoAcreditaciones.Delete"));
+
+        // Definir permisos para "AcreditacionesAsignadas"
+        var acreditacionesAsignadasPermission = mantenimientoGroup.AddPermission(MantenimientoPermissions.AcreditacionesAsignadas.Default, L("Permission:AcreditacionesAsignadas"));
+        acreditacionesAsignadasPermission.AddChild(MantenimientoPermissions.AcreditacionesAsignadas.Create, L("Permission:AcreditacionesAsignadas.Create"));
+        acreditacionesAsignadasPermission.AddChild(MantenimientoPermissions.AcreditacionesAsignadas.Edit, L("Permission:AcreditacionesAsignadas.Edit"));
+        acreditacionesAsignadasPermission.AddChild(MantenimientoPermissions.AcreditacionesAsignadas.Delete, L("Permission:AcreditacionesAsignadas.Delete"));
     }
 
     private static LocalizableString L(string name)

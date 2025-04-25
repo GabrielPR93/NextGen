@@ -9,6 +9,7 @@ using NextGen.Mantenimiento.Categoria;
 using NextGen.Mantenimiento.Empresa;
 using NextGen.Mantenimiento.Checking;
 using NextGen.Mantenimiento.TipoAcreditaciones;
+using NextGen.Mantenimiento.AcreditacionesAsignadas;
 
 namespace NextGen.Mantenimiento;
 
@@ -36,6 +37,9 @@ public class MantenimientoApplicationAutoMapperProfile : Profile
 
         CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesDto>();
         CreateMap<TipoAcreditaciones.TipoAcreditaciones, TipoAcreditacionesLookupDto>();
+
+        CreateMap<AcreditacionesAsignadas.AcreditacionesAsignadas, AcreditacionesAsignadasDto>();
+        CreateMap<AcreditacionesAsignadas.AcreditacionesAsignadas, AcreditacionesAsignadasLookupDto>();
 
     }
 }

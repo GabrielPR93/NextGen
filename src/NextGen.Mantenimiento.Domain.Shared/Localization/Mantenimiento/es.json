@@ -57,6 +57,22 @@
     "Permission: Empresa.Edit": "Editar empresa",
     "Permission: Empresa.Delete": "Eliminar empresa",
 
+    "Permission:Checking": "Gestión de checking",
+    "Permission:Checking.Create": "Crear nuevo checking",
+    "Permission:Checking.Edit": "Editar checking",
+    "Permission:Checking.Delete": "Eliminar checking",
+
+    "Permission:TipoAcreditaciones": "Gestión de tipo acreditaciones",
+    "Permission:TipoAcreditaciones.Create": "Crear nuevo tipo acreditacion",
+    "Permission:TipoAcreditaciones.Edit": "Editar tipo acreditacion",
+    "Permission:TipoAcreditaciones.Delete": "Eliminar tipo acreditacion",
+
+    "Permission:AcreditacionesAsignadas": "Gestión de acreditaciones",
+    "Permission:AcreditacionesAsignadas.Create": "Crear nueva acreditacion",
+    "Permission:AcreditacionesAsignadas.Edit": "Editar acreditacion",
+    "Permission:AcreditacionesAsignadas.Delete": "Eliminar acreditacion",
+
+
 
     //Departamentos
 

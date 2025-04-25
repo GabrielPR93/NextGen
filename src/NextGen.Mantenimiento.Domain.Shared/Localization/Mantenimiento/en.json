@@ -56,6 +56,21 @@
     "Permission: Empresa.Create": "Create new company",
     "Permission: Empresa.Edit": "Edit company",
     "Permission: Empresa.Delete": "Delete company",
+
+    "Permission:Checking": "Checking Management",
+    "Permission:Checking.Create": "Create new checking",
+    "Permission:Checking.Edit": "Edit checking",
+    "Permission:Checking.Delete": "Delete checking",
+
+    "Permission:TipoAcreditaciones": "Type of Accreditation Management",
+    "Permission:TipoAcreditaciones.Create": "Create new type of accreditation",
+    "Permission:TipoAcreditaciones.Edit": "Edit type of accreditation",
+    "Permission:TipoAcreditaciones.Delete": "Delete type of accreditation",
+
+    "Permission:AcreditacionesAsignadas": "Accreditation Management",
+    "Permission:AcreditacionesAsignadas.Create": "Create new accreditation",
+    "Permission:AcreditacionesAsignadas.Edit": "Edit accreditation",
+    "Permission:AcreditacionesAsignadas.Delete": "Delete accreditation",
     //Departamentos
 
     "NewDepartamento": "New Department",
@@ -102,7 +117,7 @@
     "Nivel": "Level",
     "Duracion": "Duration",
     "NuevaAcreditacion": "New Accreditation"
-    
+
 
 
 

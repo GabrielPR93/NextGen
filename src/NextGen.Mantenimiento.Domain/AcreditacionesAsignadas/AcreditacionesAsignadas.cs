@@ -1,11 +1,12 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
 
 namespace NextGen.Mantenimiento.AcreditacionesAsignadas;
 
-public class AcreditacionesAsignadas : AuditedEntity<int>
+public class AcreditacionesAsignadas : Entity<int>
 {
     public int Id { get; set; }
 
